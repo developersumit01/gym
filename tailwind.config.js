@@ -5,12 +5,21 @@ export default {
     extend: {
       colors: {
         primary: 'var(--primary-color)',
-        secondary: 'var(--secondary-color)',
         text: 'var(--text-color)',
         background: 'var(--background-color)',
+        authBackground: 'var(--auth-background-color)',
+        authText: 'var(--auth-text-color)',
+        authActive: 'var(--auth-active-color)',
+        active: 'var(--active-color)',
+        overlay: 'var(--overlay-color)',
+        card: 'var(--card-color)',
+      },
+      maxWidth: {
+        'layout': '1280px',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Outfit', 'sans-serif'],
+        'outfit': ['Outfit', 'sans-serif'],
       },
     },
   },
