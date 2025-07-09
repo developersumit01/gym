@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 :root{
    --primary-color: #ffed00;
    --text-color: #fff;
-   --active-color: #000;
+   --active-color: #ffffff14;
    --overlay-color: #3C3C3C;
    --background-color: #020302;
    --card-color: #3C3C3C;
@@ -16,6 +16,9 @@
    --focus-background-fill-color: #ffffff14;
 }
 
+.active{
+  @apply bg-active md:border-b-2 md:rounded-t-md;
+}
 @layer utilities {
   .focus-bg-fill {
     @apply relative overflow-hidden outline-none z-10;
