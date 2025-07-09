@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+   --primary-color: #ffed00;
+   --text-color: #fff;
+   --active-color: #ffffff14;
+   --overlay-color: #3C3C3C;
+   --background-color: #020302;
+   --card-color: #3C3C3C;
+   --auth-background-color: #fff;
+   --auth-text-color: #000;
+   --auth-active-color: #c0c0c0;
+   --focus-background-fill-color: #ffffff14;
+}
+
+.active{
+  @apply bg-active md:border-b-2 md:rounded-t-md;
+}
+@layer utilities {
+  .focus-bg-fill {
+    @apply relative overflow-hidden outline-none z-10;
+  }
+
+  .focus-bg-fill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--focus-background-fill-color);
+    z-index: 0;
+    transition: width 0.3s ease-out;
+  }
+
+  .focus-bg-fill:focus::before {
+    width: 100%;
+  }
+
+  .focus-bg-fill > * {
+    position: relative;
+    z-index: 10;
+  }
+}

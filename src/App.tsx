@@ -1,10 +1,14 @@
-const App=()=>{
-  return (
-    <div className="App">
-      <h1>Welcome to the GYM App</h1>
-      <p>This is a simple React application.</p>
-    </div>
-  );
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AppRoute from "./route";
+const App=() => {
+   return (
+     <>
+     <BrowserRouter>
+         <Routes>
+            <Route path="/*" element={<AppRoute />} />
+         </Routes>
+     </BrowserRouter>
+     </>
+   )
 }
-
-export default App
+export default App;
