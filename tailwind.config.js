@@ -21,6 +21,9 @@ export default {
         sans: ['Outfit', 'sans-serif'],
         'outfit': ['Outfit', 'sans-serif'],
       },
+      backgroundImage: {
+        'hero-image': "url('./assets/images/heroSectionImage.png')",
+      },
     },
   },
   plugins: [],

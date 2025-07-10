@@ -6,7 +6,7 @@ const Header = () => {
    const [ isHeaderOpen, setIsHeaderOpen ] = useState<boolean>(false);
    return (
       <>
-         <header className="flex justify-between items-center p-2 bg-background text-text">
+         <header className="flex fixed z-40 top-0 left-0 w-full justify-between items-center p-2 bg-background text-text">
             <div className="max-w-layout mx-auto flex justify-between items-center w-full">
                <div className="w-12">
                   <NavLink to={"/"}><img src={Logo} alt="" /></NavLink>
@@ -27,7 +27,7 @@ const Header = () => {
                </button>
             </div>
          </header>
-       <header className={`flex flex-col fixed h-[100dvh] md:hidden justify-start items-start px-2 bg-background text-text font-semibold overflow-hidden transition-all duration-300 ease-in-out ${isHeaderOpen ? 'max-w-[100dvw] opacity-100 translate-y-0' : 'max-w-0 opacity-0 -translate-y-2'}`}>
+       <header className={`flex flex-col fixed h-[calc(100dvh-64px)] z-50 top-16 md:hidden justify-start items-start px-2 bg-background text-text font-semibold overflow-hidden transition-all duration-300 ease-in-out ${isHeaderOpen ? 'max-w-[100dvw] opacity-100 translate-y-0' : 'max-w-0 opacity-0 -translate-y-2'}`}>
             <NavLink to="/" className="w-full py-1 px-2 focus-bg-fill">Home</NavLink>
             <NavLink to="/about" className="w-full py-1 px-2 focus-bg-fill">About</NavLink>
             <NavLink to="/workout-programs" className="w-full py-1 px-2 focus-bg-fill">Workout Programs</NavLink>
