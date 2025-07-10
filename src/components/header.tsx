@@ -27,14 +27,14 @@ const Header = () => {
                </button>
             </div>
          </header>
-       <header className={`flex flex-col fixed w-full md:hidden justify-between items-start px-2 bg-background text-text font-semibold overflow-hidden transition-all duration-300 ease-in-out ${isHeaderOpen ? 'max-h-[1000px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'}`}>
-            <NavLink to="/" className="w-full border-y py-2 pl-2 focus-bg-fill">Home</NavLink>
-            <NavLink to="/about" className="w-full border-b py-2 pl-2 focus-bg-fill">About</NavLink>
-            <NavLink to="/workout-programs" className="w-full border-b py-2 pl-2 focus-bg-fill">Workout Programs</NavLink>
-            <NavLink to="/recipes" className="w-full border-b py-2 pl-2 focus-bg-fill">Recipes</NavLink>
-            <NavLink to="/store" className="w-full border-b py-2 pl-2 focus-bg-fill">Store</NavLink>
-            <NavLink to="/login" className="w-full border-b py-2 pl-2 focus-bg-fill">Login</NavLink>
-            <NavLink to="/sign-up" className="w-full border-b py-2 pl-2 focus-bg-fill">Sign up</NavLink>
+       <header className={`flex flex-col fixed h-[100dvh] md:hidden justify-start items-start px-2 bg-background text-text font-semibold overflow-hidden transition-all duration-300 ease-in-out ${isHeaderOpen ? 'max-w-[100dvw] opacity-100 translate-y-0' : 'max-w-0 opacity-0 -translate-y-2'}`}>
+            <NavLink to="/" className="w-full py-1 px-2 focus-bg-fill">Home</NavLink>
+            <NavLink to="/about" className="w-full py-1 px-2 focus-bg-fill">About</NavLink>
+            <NavLink to="/workout-programs" className="w-full py-1 px-2 focus-bg-fill">Workout Programs</NavLink>
+            <NavLink to="/recipes" className="w-full py-1 px-2 focus-bg-fill">Recipes</NavLink>
+            <NavLink to="/store" className="w-full py-1 px-2 focus-bg-fill">Store</NavLink>
+            <NavLink to="/login" className="w-full py-1 px-2 focus-bg-fill">Login</NavLink>
+            <NavLink to="/sign-up" className="w-full py-1 px-2 focus-bg-fill">Sign up</NavLink>
          </header>
       </>
    )
