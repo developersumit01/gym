@@ -1,6 +1,13 @@
 import HeroSectionImage from '../assets/images/heroSectionImage.png';
 import Button from '../components/button';
+import { useContext } from 'react';
+import { WorkoutProgramsContext } from '../contexts/workoutPrograms.context';
+import WorkoutProgramCard from '../components/workoutProgramCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import YogaImage from '../assets/images/yoga.png';
 const Home = () => {
+   const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
    return (
       <>
          <main className="flex flex-col items-center md:justify-center justify-start min-h-screen bg-background text-text">
@@ -33,20 +40,27 @@ const Home = () => {
                {/* Hero section of home page end here */}
                <div className="text-text">
                   <div className="text-4xl font-medium">Free Workout Programs</div>
-                  {/* workout card container */}
-                  <div className=""> 
-                     {/* workout card */}
-                     <div className="">
-                        {/* image container */}
-                        <div className="">
-                           <img src="" alt="" />
-                        </div>
-                        {/* overlay */}
-                        <div className=""></div>
-                        {/* card text */}
-                        <div className=""></div>
-                     </div>
-                  </div>
+                  {/* <Swiper slidesPerView={1} spaceBetween={10} loop={false}>
+                     {workoutPrograms.map((program:any) => (
+                        <SwiperSlide key={program.id}>
+                           <WorkoutProgramCard image={program.image} text={program.text} />
+                        </SwiperSlide>
+                     ))}
+                  </Swiper> */}
+                  <Swiper slidesPerView={1} spaceBetween={10} loop={true}>
+                     {/* {workoutPrograms.map((program) => ( */}
+                        <SwiperSlide key={'jhsdj'}>
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
+                        </SwiperSlide>
+                     {/* ))} */}
+                  </Swiper>
                </div>
             </div>
          </main>

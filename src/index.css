@@ -19,6 +19,10 @@
 .active{
   @apply bg-active md:border-b-2 md:rounded-t-md;
 }
+.vertical-rl {
+  writing-mode: vertical-rl;
+  /* text-orientation: upright; */
+}
 @layer utilities {
   .focus-bg-fill {
     @apply relative overflow-hidden outline-none z-10;

@@ -1,14 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppRoute from "./route";
-const App=() => {
+import { WorkoutProgramsProvider } from "./contexts/workoutPrograms.context";
+const App = () => {
    return (
-     <>
-     <BrowserRouter>
-         <Routes>
-            <Route path="/*" element={<AppRoute />} />
-         </Routes>
-     </BrowserRouter>
-     </>
+      <>
+         <WorkoutProgramsProvider>
+            <BrowserRouter>
+               <Routes>
+                  <Route path="/*" element={<AppRoute />} />
+               </Routes>
+            </BrowserRouter>
+         </WorkoutProgramsProvider>
+      </>
    )
 }
 export default App;
