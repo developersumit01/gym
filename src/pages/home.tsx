@@ -6,8 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Navigation } from "swiper/modules";
 import WorkoutProgramCard from "../components/workoutProgramCard";
+import { ProductsContext } from "../contexts/product.context";
+import ProductCard from "../components/productCard";
 const Home = () => {
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
+   const [ products ] = useContext(ProductsContext);
    return (
       <>
          <main className="flex flex-col items-center md:justify-center justify-start bg-background text-text md:px-4">
@@ -52,7 +55,7 @@ const Home = () => {
          {/* Programs List Start here */}
          <section className="bg-background text-text md:px-4">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
-               <div className="text-2xl md:text-3xl font-medium text-start ml-4 md:ml-0 mb-4">Free Workout Programs</div>
+               <div className="text-2xl font-medium text-start ml-4 md:ml-0 mb-4">Free Workout Programs</div>
                <Swiper
                   navigation={true}
                   modules={[ Navigation ]}
@@ -90,6 +93,24 @@ const Home = () => {
             </div>
          </section>
          {/* Programs List End here */}
+         {/* Products List Start here */}
+         <section className="bg-background text-text md:px-4 pt-8">
+            <div className="bg-background text-center text-text max-w-layout mx-auto">
+               <div className="flex justify-between item-center ml-4 md:ml-0 mb-4 items-center"><span className="text-2xl font-medium text-start text-primary">/// GET OUR MERCH</span> <Button name="View All Products" /></div>
+               {/* card container */}
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
+                  {/* card */}
+                  {products.map((product: any) => (
+                     <ProductCard
+                        id={product.id}
+                        name={product.name}
+                        image={product.image}
+                     />
+                  ))}
+               </div>
+            </div>
+         </section>
+         {/* Products list end here */}
       </>
    );
 };
