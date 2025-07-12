@@ -1,34 +1,43 @@
-import HeroSectionImage from '../assets/images/heroSectionImage.png';
-import Button from '../components/button';
-import { useContext } from 'react';
-import { WorkoutProgramsContext } from '../contexts/workoutPrograms.context';
-import WorkoutProgramCard from '../components/workoutProgramCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import YogaImage from '../assets/images/yoga.png';
+import HeroSectionImage from "../assets/images/heroSectionImage.png";
+import Button from "../components/button";
+import { useContext } from "react";
+import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Navigation } from "swiper/modules";
+import WorkoutProgramCard from "../components/workoutProgramCard";
 const Home = () => {
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
    return (
       <>
-         <main className="flex flex-col items-center md:justify-center justify-start min-h-screen bg-background text-text">
-            <div className="max-w-layout flex items-start flex-col">
+         <main className="flex flex-col items-center md:justify-center justify-start bg-background text-text md:px-4">
+            <div className="w-full max-w-layout flex items-start flex-col">
                {/* Hero section of home page start here */}
-               <div className="relative bg-hero-image md:bg-none bg-cover bg-center flex flex-col items-center justify-center md:h-[100dvh] h-[64dvh] md:mt-0 mt-[70px] md:px-0 px-4">
+               <div className="relative bg-hero-image md:bg-none bg-cover bg-center flex flex-col items-center justify-center md:h-screen h-[64vh] md:mt-0 mt-[70px] md:px-0 px-4">
                   {/* Background Overlay with opacity */}
-                  <div className="absolute inset-0 bg-black/80 z-0" aria-hidden="true"></div>
+                  <div
+                     className="absolute inset-0 bg-black/80 z-0"
+                     aria-hidden="true"></div>
 
                   {/* Main Content */}
                   <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-2">
                      <div className="flex flex-col items-start justify-center md:gap-12 gap-8">
                         <div>
-                           <div className='text-4xl md:text-7xl mb-3'>make your</div>
-                           <div className='text-4xl md:text-7xl font-bold tracking-widest'>BODY SHAPE</div>
+                           <div className="text-4xl md:text-7xl mb-3">
+                              make your
+                           </div>
+                           <div className="text-4xl md:text-7xl font-bold tracking-widest">
+                              BODY SHAPE
+                           </div>
                         </div>
-                        <p className='text-lg'>
-                           Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles, and improve your ability to do everyday activities.
+                        <p className="text-lg">
+                           Being physically active can improve your brain
+                           health, help manage weight, reduce the risk of
+                           disease, strengthen bones and muscles, and improve
+                           your ability to do everyday activities.
                         </p>
                         <div>
-                           <Button name='Get Started' />
+                           <Button name="Get Started" />
                         </div>
                      </div>
 
@@ -38,32 +47,49 @@ const Home = () => {
                   </div>
                </div>
                {/* Hero section of home page end here */}
-               <div className="text-text">
-                  <div className="text-4xl font-medium">Free Workout Programs</div>
-                  {/* <Swiper slidesPerView={1} spaceBetween={10} loop={false}>
-                     {workoutPrograms.map((program:any) => (
-                        <SwiperSlide key={program.id}>
-                           <WorkoutProgramCard image={program.image} text={program.text} />
-                        </SwiperSlide>
-                     ))}
-                  </Swiper> */}
-                  <Swiper slidesPerView={1} spaceBetween={10} loop={true}>
-                     {/* {workoutPrograms.map((program) => ( */}
-                        <SwiperSlide key={'jhsdj'}>
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                           <WorkoutProgramCard image={YogaImage} text={"Sumit Kumar"} />
-                        </SwiperSlide>
-                     {/* ))} */}
-                  </Swiper>
-               </div>
             </div>
          </main>
+         {/* Programs List Start here */}
+         <section className="bg-background text-text md:px-4">
+            <div className="bg-background text-center text-text max-w-layout mx-auto">
+               <div className="text-2xl md:text-3xl font-medium text-start ml-4 md:ml-0 mb-4">Free Workout Programs</div>
+               <Swiper
+                  navigation={true}
+                  modules={[ Navigation ]}
+                  slidesPerView={5}
+                  spaceBetween={2}
+                  loop={false}
+                  breakpoints={{
+                     300: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                     },
+                     768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                     },
+                     1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                     },
+                     1280: {
+                        slidesPerView: 5,
+                        spaceBetween: 50,
+                     },
+                  }}
+                  className="md:!mx-0 !mx-4">
+                  {workoutPrograms.map((program: any) => (
+                     <SwiperSlide key={program.id}>
+                        <WorkoutProgramCard
+                           image={program.image}
+                           text={program.text}
+                        />
+                     </SwiperSlide>
+                  ))}
+               </Swiper>
+            </div>
+         </section>
+         {/* Programs List End here */}
       </>
    );
 };

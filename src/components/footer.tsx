@@ -1,7 +1,10 @@
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 const Footer = () => {
    return (
       <>
-         <h1>I am Footer</h1>
+         
       </>
    );
 }
