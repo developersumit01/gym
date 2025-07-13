@@ -111,6 +111,15 @@ const Home = () => {
             </div>
          </section>
          {/* Products list end here */}
+         {/* Gallery Section start here */}
+         <section className="bg-background text-text md:px-4 pt-8">
+            <div className="bg-background text-center text-text max-w-layout mx-auto">
+               <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// GALLERY</div>
+               
+            </div>
+
+         </section>
+         {/* Callery section end here */}
       </>
    );
 };

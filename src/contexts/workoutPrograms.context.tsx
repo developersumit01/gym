@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
-import CardioImage from "../assets/images/cardio.png";
-import GroupImage from "../assets/images/group.png";
-import YogaImage from "../assets/images/yoga.png";
+import CardioImage from "../assets/images/workoutPrograms/cardio.png";
+import GroupImage from "../assets/images/workoutPrograms/group.png";
+import YogaImage from "../assets/images/workoutPrograms/yoga.png";
 interface WorkoutProgram {
    children?: React.ReactNode;
 }

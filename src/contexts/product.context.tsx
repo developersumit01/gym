@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
-import tShirtImage from "../assets/images/t-shirt.png";
-import BagImage from "../assets/images/bag.png";
-import WaterBottleImage from "../assets/images/water-bottle.png";
+import tShirtImage from "../assets/images/products/t-shirt.png";
+import BagImage from "../assets/images/products/bag.png";
+import WaterBottleImage from "../assets/images/products/water-bottle.png";
 interface Products {
    children: React.ReactNode;
 }
