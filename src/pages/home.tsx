@@ -1,6 +1,6 @@
 import HeroSectionImage from "../assets/images/heroSectionImage.png";
 import Button from "../components/button";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -10,7 +10,6 @@ import { ProductsContext } from "../contexts/product.context";
 import ProductCard from "../components/productCard";
 import { GallaryContext } from "../contexts/gallery.context";
 const Home = () => {
-   const [galleryOrder, setGalleryOrder] = useState<number>(0);
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
    const [ products ] = useContext(ProductsContext);
    const [ gallery ] = useContext(GallaryContext);
