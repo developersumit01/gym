@@ -1,6 +1,6 @@
 import HeroSectionImage from "../assets/images/heroSectionImage.png";
 import Button from "../components/button";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -8,9 +8,12 @@ import { Navigation } from "swiper/modules";
 import WorkoutProgramCard from "../components/workoutProgramCard";
 import { ProductsContext } from "../contexts/product.context";
 import ProductCard from "../components/productCard";
+import { GallaryContext } from "../contexts/gallery.context";
 const Home = () => {
+   const [galleryOrder, setGalleryOrder] = useState<number>(0);
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
    const [ products ] = useContext(ProductsContext);
+   const [ gallery ] = useContext(GallaryContext);
    return (
       <>
          <main className="flex flex-col items-center md:justify-center justify-start bg-background text-text md:px-4">
@@ -115,7 +118,17 @@ const Home = () => {
          <section className="bg-background text-text md:px-4 pt-8">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
                <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// GALLERY</div>
-               
+               {/* 440px is mini tab width for gallery */}
+               <div className={`grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[200px_1fr_200px] xl:grid-cols-[200px_1fr_200px_1fr] gap-6 px-4 md:px-0`}>
+                  {gallery&&gallery.map((image:string)=>{
+                  return (
+                     <img
+                        src={image}
+                        className="object-cover w-full h-48 md:h-72 rounded-2xl"
+                     />
+                  );
+               })}
+               </div>
             </div>
 
          </section>
