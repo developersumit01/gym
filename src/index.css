@@ -7,7 +7,7 @@
    --primary-color: #fe8d00;
    --text-color: #fff;
    --active-color: #ffffff14;
-   --overlay-color: #3C3C3C;
+   --overlay-color: #011231c4;
    --background-color: #000c22;
    --card-color: #3C3C3C;
    --auth-background-color: #fff;
@@ -17,7 +17,7 @@
 }
 
 .active{
-  @apply bg-active md:border-b-2 md:rounded-t-md;
+  @apply text-primary;
 }
 .vertical-rl {
   writing-mode: vertical-rl;

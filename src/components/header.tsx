@@ -6,7 +6,7 @@ const Header = () => {
    const [ isHeaderOpen, setIsHeaderOpen ] = useState<boolean>(false);
    return (
       <>
-         <header className="flex fixed z-40 top-0 left-0 w-full justify-between items-center p-2 bg-background text-text">
+         <header className="flex fixed z-40 top-0 left-0 w-full justify-between items-center p-2 bg-background text-text border-b border-primary md:px-4">
             <div className="max-w-layout mx-auto flex justify-between items-center w-full">
                <div className="w-12">
                   <NavLink to={"/"}><img src={Logo} alt="" /></NavLink>
