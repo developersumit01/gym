@@ -148,7 +148,7 @@ const Home = () => {
                         return (
                            <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-4 items-center">
                               <div className="mx-auto md:mx-0">
-                                 <img src={recipe.img} alt="" className="rounded-2xl" />
+                                 <img src={recipe.img} alt="" className="rounded-2xl max-h-[440px]" />
                               </div>
                               <div className="">
                                  <div className="text-2xl md:text-3xl mb-4 font-semibold">{recipe.name}</div>

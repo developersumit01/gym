@@ -8,7 +8,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 1,
       "name": "Falafel‑Waffle French Toast",
-      "img": "https://img-global.cpcdn.com/recipes/977bc25b4a085ace/300x426cq80/falafel-waffle-recipe-main-photo.webp",
+      "img": "https://cookingandcussing.com/wp-content/uploads/2019/08/IMG_7669-min.jpg.webp",
       "description": "A fun twist on a classic! Flavours of falafel in a crispy waffle form—no deep‑frying. Served with cucumber‑tomato salad and cilantro yogurt sauce for a refreshing brunch.",
       "recipe": [
         "White Bread: Thick‑cut, sturdy, slightly stale slices absorb the custard better.",
