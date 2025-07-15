@@ -140,13 +140,13 @@ const Home = () => {
                {/* Title */}
                <div className="flex justify-between item-center mx-4 md:mx-0 items-center"><span className="text-2xl font-medium text-primary">/// Recipes</span> <Button name="View More Recipes" /> </div>
                {/* recipes container start here */}
-               <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] pt-4 gap-14 px-4 md:px-0">
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_400px] pt-4 gap-14 px-4 md:px-0">
                   {/* Left section */}
                   {/* Display section */}
                   {
                      recipes(1).map((recipe: any) => {
                         return (
-                           <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-4 items-center">
+                           <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-4 items-center">
                               <div className="mx-auto md:mx-0">
                                  <img src={recipe.img} alt="" className="rounded-2xl max-h-[440px]" />
                               </div>
@@ -160,7 +160,7 @@ const Home = () => {
                      })
                   }
                   {/* More listing section */}
-                  <div className="">
+                  <div className="md:flex md:flex-col md:justify-evenly md:gap-4">
                      {
                         recipes(4).map((recipe: any) => {
                            return (
