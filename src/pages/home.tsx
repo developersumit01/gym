@@ -9,10 +9,12 @@ import WorkoutProgramCard from "../components/workoutProgramCard";
 import { ProductsContext } from "../contexts/product.context";
 import ProductCard from "../components/productCard";
 import { GallaryContext } from "../contexts/gallery.context";
+import { RecipesConrext } from "../contexts/recipes.context";
 const Home = () => {
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
    const [ products ] = useContext(ProductsContext);
    const [ gallery ] = useContext(GallaryContext);
+   const recipes = useContext(RecipesConrext);
    return (
       <>
          <main className="flex flex-col items-center md:justify-center justify-start bg-background text-text md:px-4">
@@ -98,7 +100,7 @@ const Home = () => {
          {/* Products List Start here */}
          <section className="bg-background text-text md:px-4 pt-8">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
-               <div className="flex justify-between item-center ml-4 md:ml-0 mb-4 items-center"><span className="text-2xl font-medium text-start text-primary">/// GET OUR MERCH</span> <Button name="View All Products" /></div>
+               <div className="flex justify-between item-center mx-4 md:mx-0 mb-4 items-center"><span className="text-2xl font-medium text-start text-primary">/// GET OUR MERCH</span> <Button name="View All Products" /></div>
                {/* card container */}
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
                   {/* card */}
@@ -119,20 +121,67 @@ const Home = () => {
                <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// GALLERY</div>
                {/* 440px is mini tab width for gallery */}
                <div className={`grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[200px_1fr_200px] xl:grid-cols-[200px_1fr_200px_1fr] gap-6 px-4 md:px-0`}>
-                  {gallery&&gallery.map((image:string)=>{
-                  return (
-                     <img
-                        src={image}
-                        className="object-cover w-full h-48 md:h-72 rounded-2xl"
-                     />
-                  );
-               })}
+                  {gallery && gallery.map((image: string) => {
+                     return (
+                        <img
+                           src={image}
+                           className="object-cover w-full h-48 md:h-72 rounded-2xl"
+                        />
+                     );
+                  })}
                </div>
             </div>
 
          </section>
-         {/* Callery section end here */}
-
+         {/* Gallery section end here */}
+         {/* Recipes section start here */}
+         <section className="bg-background text-text md:px-4 pt-8">
+            <div className="max-w-layout mx-auto">
+               {/* Title */}
+               <div className="flex justify-between item-center mx-4 md:mx-0 items-center"><span className="text-2xl font-medium text-primary">/// Recipes</span> <Button name="View More Recipes" /> </div>
+               {/* recipes container start here */}
+               <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] pt-4 gap-14 px-4 md:px-0">
+                  {/* Left section */}
+                  {/* Display section */}
+                  {
+                     recipes(1).map((recipe: any) => {
+                        return (
+                           <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-4 items-center">
+                              <div className="mx-auto md:mx-0">
+                                 <img src={recipe.img} alt="" className="rounded-2xl" />
+                              </div>
+                              <div className="">
+                                 <div className="text-2xl md:text-3xl mb-4 font-semibold">{recipe.name}</div>
+                                 <div className="mb-4">{recipe.description}</div>
+                                 <Button name="View Full Recipe" />
+                              </div>
+                           </div>
+                        );
+                     })
+                  }
+                  {/* More listing section */}
+                  <div className="">
+                     {
+                        recipes(4).map((recipe: any) => {
+                           return (
+                              <div className="flex items-center gap-4 mb-4">
+                                 <img
+                                    src={recipe.img}
+                                    alt=""
+                                    className="w-28 h-24 rounded-xl"
+                                 />
+                                 <div>
+                                    <div className="font-medium">{recipe.name}</div>
+                                 </div>
+                              </div>
+                           );
+                        })
+                     }
+                  </div>
+               </div>
+            </div>
+         </section>
+         {/* Recipes section end here */}
       </>
    );
 };
