@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 :root{
-   --primary-color: #ffed00;
+   --primary-color: #fe8d00;
    --text-color: #fff;
    --active-color: #ffffff14;
    --overlay-color: #3C3C3C;
-   --background-color: #020302;
+   --background-color: #000c22;
    --card-color: #3C3C3C;
    --auth-background-color: #fff;
    --auth-text-color: #000;

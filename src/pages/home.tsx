@@ -23,7 +23,7 @@ const Home = () => {
                <div className="relative bg-hero-image md:bg-none bg-cover bg-center flex flex-col items-center justify-center md:h-screen h-[64vh] md:mt-0 mt-[70px] md:px-0 px-4">
                   {/* Background Overlay with opacity */}
                   <div
-                     className="absolute inset-0 bg-black/80 z-0"
+                     className="absolute inset-0 bg-primary/80 z-0"
                      aria-hidden="true"></div>
 
                   {/* Main Content */}
