@@ -49,7 +49,7 @@ const Home = () => {
                      </div>
 
                      <div className="items-center justify-center md:flex hidden">
-                        <img src={HeroSectionImage} alt="Hero Section Image" />
+                        <img src={HeroSectionImage} alt="Hero Section Image" className="rounded-lg" />
                      </div>
                   </div>
                </div>

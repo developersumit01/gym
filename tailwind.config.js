@@ -13,6 +13,7 @@ export default {
         active: 'var(--active-color)',
         overlay: 'var(--overlay-color)',
         card: 'var(--card-color)',
+        "header-background": 'var(--header-background-color)',
       },
       maxWidth: {
         'layout': '1280px',
