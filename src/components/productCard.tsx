@@ -15,7 +15,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id,name, image }) => {
                <div className="text-lg font-semibold relative z-20 pb-2">
                   {name}
                </div>
-               <div className="absolute left-0 bottom-0 bg-overlay z-0 h-1/2 w-full"></div>
+               <div className="absolute left-0 bottom-0 bg-overlay z-0 h-1/2 w-full rounded-b-lg"></div>
             </div>
          </div>
       </React.Fragment>

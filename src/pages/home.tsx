@@ -20,10 +20,10 @@ const Home = () => {
          <main className="flex flex-col items-center md:justify-center justify-start bg-background text-text md:px-4">
             <div className="w-full max-w-layout flex items-start flex-col">
                {/* Hero section of home page start here */}
-               <div className="relative bg-hero-image md:bg-none bg-cover bg-center flex flex-col items-center justify-center md:h-screen h-[64vh] md:mt-0 mt-[70px] md:px-0 px-4">
+               <div className="relative bg-hero-image md:bg-none bg-cover bg-center flex flex-col items-center justify-center md:h-screen h-[64vh] md:mt-0 mt-[65px] md:px-0 px-4">
                   {/* Background Overlay with opacity */}
                   <div
-                     className="absolute inset-0 bg-black/80 z-0"
+                     className="absolute inset-0 bg-overlay z-0 md:hidden"
                      aria-hidden="true"></div>
 
                   {/* Main Content */}
@@ -49,7 +49,7 @@ const Home = () => {
                      </div>
 
                      <div className="items-center justify-center md:flex hidden">
-                        <img src={HeroSectionImage} alt="Hero Section Image" />
+                        <img src={HeroSectionImage} alt="Hero Section Image" className="rounded-lg" />
                      </div>
                   </div>
                </div>
