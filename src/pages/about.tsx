@@ -4,7 +4,7 @@ import Button from '../components/button';
 import { AboutCardContext } from '../contexts/aboutCard.context';
 import SmileyIcon from '../assets/icons/smiley.svg';
 const About = () => {
-   const [ aboutCardData, setAboutCardData ] = useContext(AboutCardContext);
+   const [ aboutCardData ] = useContext(AboutCardContext);
    return (<>
       <section className='relative w-full h-[80vh] md:h-screen flex text-text'>
          <div className="max-w-layout mx-auto">
