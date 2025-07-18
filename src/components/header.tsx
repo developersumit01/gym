@@ -13,8 +13,8 @@ const Header = () => {
                </div>
                <nav className="hidden md:flex space-x-4 text-lg font-semibold">
                   <NavLink className="px-2" to="/">Home</NavLink>
-                  {/* <NavLink className="px-2" to="/about">About</NavLink>
-                  <NavLink className="px-2" to="/workout-programs">Workout Programs</NavLink>
+                  <NavLink className="px-2" to="/about">About</NavLink>
+                  {/* <NavLink className="px-2" to="/workout-programs">Workout Programs</NavLink>
                   <NavLink className="px-2" to="/recipes">Recipes</NavLink>
                   <NavLink className="px-2" to="/store">Store</NavLink>
                   <NavLink className="px-2" to="/login">Login</NavLink>
@@ -29,8 +29,8 @@ const Header = () => {
          </header>
        <header className={`flex flex-col fixed h-[calc(100dvh-64px)] z-50 top-16 md:hidden justify-start items-start px-2 bg-header-background text-text font-semibold overflow-hidden transition-all duration-300 ease-in-out ${isHeaderOpen ? 'max-w-[100dvw] opacity-100 translate-y-0' : 'max-w-0 opacity-0 -translate-y-2'}`}>
             <NavLink to="/" className="w-full py-1 px-2 focus-bg-fill">Home</NavLink>
-            {/* <NavLink to="/about" className="w-full py-1 px-2 focus-bg-fill">About</NavLink>
-            <NavLink to="/workout-programs" className="w-full py-1 px-2 focus-bg-fill">Workout Programs</NavLink>
+            <NavLink to="/about" className="w-full py-1 px-2 focus-bg-fill">About</NavLink>
+            {/* <NavLink to="/workout-programs" className="w-full py-1 px-2 focus-bg-fill">Workout Programs</NavLink>
             <NavLink to="/recipes" className="w-full py-1 px-2 focus-bg-fill">Recipes</NavLink>
             <NavLink to="/store" className="w-full py-1 px-2 focus-bg-fill">Store</NavLink>
             <NavLink to="/login" className="w-full py-1 px-2 focus-bg-fill">Login</NavLink>
