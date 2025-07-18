@@ -9,7 +9,7 @@ const Contact = () => {
                {/* form container */}
                <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] gap-4">
                   <div className="max-w-2xl flex justify-center items-center md:p-9 p-1">
-                     <form className="flex flex-col gap-4 mt-4 w-full">
+                     <form className="flex flex-col gap-4 w-full">
                         <input type="text" className='p-3 rounded-lg outline-none font-semibold text-lg bg-transparent text-text tracking-wider border border-primary' placeholder='Enter Your Name' />
                         <input type="email" className='p-3 rounded-lg outline-none  text-lg bg-transparent text-text tracking-wider border border-primary' placeholder='Enter Your Email' />
                         <textarea className='px-3 py-2 rounded-lg outline-none  text-lg bg-transparent text-text tracking-wider border border-primary' placeholder='Enter Your Message' ></textarea>
