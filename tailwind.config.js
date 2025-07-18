@@ -25,6 +25,9 @@ export default {
       backgroundImage: {
         'hero-image': "url('./assets/images/heroSectionImage.png')",
       },
+      screens: {
+        'xs': '440px',
+      },
     },
   },
   plugins: [],

@@ -97,12 +97,12 @@ const Home = () => {
             </div>
          </section>
          {/* Programs List End here */}
-         {/* Products List Start here */}
+         {/* Goods List Start here */}
          <section className="bg-background text-text md:px-4 pt-8">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
-               <div className="flex justify-between item-center mx-4 md:mx-0 mb-4 items-center"><span className="text-2xl font-medium text-start text-primary">/// GET OUR MERCH</span> <Button name="View All Products" /></div>
+               <div className="flex justify-between item-center mx-4 md:mx-0 mb-4 items-center"><span className="text-2xl font-medium text-start text-primary">/// GOODS</span> <Button name="View All Products" /></div>
                {/* card container */}
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
+               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
                   {/* card */}
                   {products.map((product: any) => (
                      <ProductCard
@@ -114,20 +114,46 @@ const Home = () => {
                </div>
             </div>
          </section>
-         {/* Products list end here */}
+         {/* Goods list end here */}
          {/* Gallery Section start here */}
          <section className="bg-background text-text md:px-4 pt-8">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
                <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// GALLERY</div>
-               {/* 440px is mini tab width for gallery */}
-               <div className={`grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[200px_1fr_200px] xl:grid-cols-[200px_1fr_200px_1fr] gap-6 px-4 md:px-0`}>
-                  {gallery && gallery.map((image: string) => {
-                     return (
-                        <img
-                           src={image}
-                           className="object-cover w-full h-48 md:h-72 rounded-2xl"
-                        />
-                     );
+               <div className={`grid grid-cols-1 xs:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 px-4 md:px-0`}>
+                  {gallery && gallery.map((image: string,index:number) => {
+                     if(parseInt((index/4).toString())%2==0){
+                        if(index%2==1){
+                           return (
+                              <img
+                                 src={image}
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-2"
+                              />
+                           );
+                        }else{
+                           return (
+                              <img
+                                 src={image}
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-1"
+                              />
+                           );
+                        }
+                     }else{
+                        if(index%2==0){
+                           return (
+                              <img
+                                 src={image}
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-2"
+                              />
+                           );
+                        }else{
+                           return (
+                              <img
+                                 src={image}
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-1"
+                              />
+                           );
+                        }
+                     }
                   })}
                </div>
             </div>
