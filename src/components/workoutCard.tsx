@@ -7,7 +7,7 @@ interface WorkoutCardProps{
 const WorkoutCard:React.FC<WorkoutCardProps> = ({name,image}) =>{
    return (
       <>
-         <div className="w-56 md:w-80 mx-auto h-56 md:h-80 rounded-2xl overflow-hidden relative group cursor-pointer">
+         <div className="w-56 md:w-80 mx-auto h-60 md:h-96 rounded-2xl overflow-hidden relative group cursor-pointer">
             <img src={image} alt="" className="w-full" />
             <div className="absolute bg-overlay z-20 bottom-4 left-1/2 -translate-x-1/2 rounded-xl">
                <div className="flex gap-6">
