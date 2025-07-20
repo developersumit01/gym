@@ -89,7 +89,7 @@ const Home = () => {
                      <SwiperSlide key={program.id}>
                         <WorkoutProgramCard
                            image={program.image}
-                           text={program.text}
+                           text={program.category}
                         />
                      </SwiperSlide>
                   ))}

@@ -6,7 +6,7 @@ interface WorkoutProgramCardProps {
 }
 const WorkoutProgramCard: React.FC<WorkoutProgramCardProps> = ({ image, text }) => {
    return (<>
-      <div className="w-[10rem]">
+      <div className="w-[10rem] mx-auto">
          {/* workout card */}
          <div className="relative w-[10rem]">
             {/* image container */}
