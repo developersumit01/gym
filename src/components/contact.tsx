@@ -3,7 +3,7 @@ import Button from '../components/button';
 const Contact = () => {
    return (
       <>
-         <section className="bg-background">
+         <section className="bg-background mt-6">
             <div className="pt-4 px-4 md:px-0 max-w-layout m-auto">
                <div className="text-primary text-2xl md:text-3xl pl-4">/// Contact Us</div>
                {/* form container */}
