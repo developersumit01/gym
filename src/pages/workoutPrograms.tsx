@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
 import WorkoutProgramCard from "../components/workoutProgramCard";
 import WorkoutCard from "../components/workoutCard";
-import TempImage from "../assets/images/workoutPrograms/image1.png"
 
 const WorkoutPrograms = () => {
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
