@@ -3,7 +3,7 @@ import Button from "./button";
 interface WorkoutProgramCardProps {
    image: string;
    text: string;
-   onClick:()=>void;
+   onClick?:()=>void;
 }
 const WorkoutProgramCard: React.FC<WorkoutProgramCardProps> = ({ image, text, onClick }) => {
    return (<>

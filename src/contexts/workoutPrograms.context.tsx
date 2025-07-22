@@ -21,7 +21,7 @@ import Image16 from "../assets/images/workoutPrograms/image16.png";
 import Image17 from "../assets/images/workoutPrograms/image17.png";
 import Image18 from "../assets/images/workoutPrograms/image18.png";
 import Image19 from "../assets/images/workoutPrograms/image19.png";
-import { filterWorkoutData } from "./data.ts";
+import { filterWorkoutData } from "./workout.tsx";
 interface WorkoutProgram {
    children?: React.ReactNode;
 }

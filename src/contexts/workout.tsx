@@ -14641,6 +14641,6 @@ const workoutData=[
     }
 ]
 
-export const filterWorkoutData=(workoutName:string)=>{
+export const filterWorkoutData=(workoutName:string|undefined)=>{
    return workoutData.filter(ele=>ele.name==workoutName);
 }
