@@ -13,7 +13,7 @@ const AppRoute = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutCardContextProvider><About /></AboutCardContextProvider>} />
             <Route path="/workout-programs" element={<WorkoutPrograms />} />
-            <Route path="/workout-programs/:workoutName" element={<Workout />} />
+            <Route path="/workout-programs/:workoutName/day/:day" element={<Workout />} />
             {/* Add more routes as needed */}
          </Routes>
       </Layout>

@@ -5,10 +5,10 @@ const Contact = () => {
       <>
          <section className="bg-background mt-6">
             <div className="pt-4 px-4 md:px-0 max-w-layout m-auto">
-               <div className="text-primary text-2xl md:text-3xl pl-4">/// Contact Us</div>
+               <div className="text-primary text-2xl md:text-3xl md:pl-4 mb-4 pad:mb-0">/// Contact Us</div>
                {/* form container */}
                <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] gap-4">
-                  <div className="max-w-2xl flex justify-center items-center md:p-9 p-1">
+                  <div className="max-w-2xl flex justify-center items-center md:p-4 p-1">
                      <form className="flex flex-col gap-4 w-full">
                         <input type="text" className='p-3 rounded-lg outline-none font-semibold text-lg bg-transparent text-text tracking-wider border border-primary' placeholder='Enter Your Name' />
                         <input type="email" className='p-3 rounded-lg outline-none  text-lg bg-transparent text-text tracking-wider border border-primary' placeholder='Enter Your Email' />
