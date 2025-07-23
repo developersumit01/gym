@@ -14,6 +14,7 @@ export default {
         overlay: 'var(--overlay-color)',
         card: 'var(--card-color)',
         "header-background": 'var(--header-background-color)',
+        darkBackground:'var(--dark-background-color)'
       },
       maxWidth: {
         'layout': '1280px',
@@ -27,6 +28,7 @@ export default {
       },
       screens: {
         'xs': '440px',
+        'pad':'900px'
       },
     },
   },

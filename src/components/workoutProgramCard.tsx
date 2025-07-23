@@ -3,8 +3,9 @@ import Button from "./button";
 interface WorkoutProgramCardProps {
    image: string;
    text: string;
+   onClick?:()=>void;
 }
-const WorkoutProgramCard: React.FC<WorkoutProgramCardProps> = ({ image, text }) => {
+const WorkoutProgramCard: React.FC<WorkoutProgramCardProps> = ({ image, text, onClick }) => {
    return (<>
       <div className="w-[10rem] mx-auto">
          {/* workout card */}
@@ -18,7 +19,7 @@ const WorkoutProgramCard: React.FC<WorkoutProgramCardProps> = ({ image, text }) 
          </div>
          {/* button */}
          <div className="mt-4 flex items-center justify-center">
-            <Button name='Start Today' />
+            <Button name='Start Today' onClick={onClick} />
          </div>
       </div>
    </>);

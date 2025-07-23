@@ -1,4 +1,5 @@
 import type React from "react";
+import { NavLink } from "react-router-dom";
 
 interface WorkoutCardProps{
    name:string,
@@ -16,7 +17,7 @@ const WorkoutCard:React.FC<WorkoutCardProps> = ({name,image}) =>{
                </div>
                <div className="m-2">{name}</div>
             </div>
-            <div className="absolute inset-0 bg-overlay text-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out flex items-center justify-center text-2xl font-semibold">Let's Start</div>
+         <NavLink to={`${name}/day/1`} state={{image:image}} className="absolute z-20 inset-0 bg-overlay text-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out flex items-center justify-center text-2xl font-semibold">Let's Start</NavLink>
          </div>
       </>
    )

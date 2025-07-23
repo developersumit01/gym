@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
@@ -7,10 +7,17 @@ import WorkoutCard from "../components/workoutCard";
 
 const WorkoutPrograms = () => {
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
+   const workoutProgramsRef = useRef<{ [ key: string ]: HTMLElement }>({});
+   const setRef = (id: string) => (ele: HTMLElement) => {
+      workoutProgramsRef.current[ id ] = ele;
+   }
+   const handleScrollToSection = (id: string) => {
+      workoutProgramsRef.current[ id ].scrollIntoView({ behavior: 'smooth' })
+   }
    return (
       <>
          <section className="mt-[64px] bg-background text-text max-w-layout mx-auto pt-6">
-            <div className="text-3xl font-semibold md:text-4xl mb-4">Free Workout Programs</div>
+            <div className="text-3xl font-semibold md:text-4xl mb-4 pl-2 md:pl-0">Free Workout Programs</div>
             <div className="w-full">
                <Swiper
                   navigation={true}
@@ -42,6 +49,7 @@ const WorkoutPrograms = () => {
                         <WorkoutProgramCard
                            image={program.image}
                            text={program.category}
+                           onClick={() => { handleScrollToSection(program.category) }}
                         />
                      </SwiperSlide>
                   ))}
@@ -51,7 +59,7 @@ const WorkoutPrograms = () => {
          {
             workoutPrograms.map((workoutProgram: any) => {
                return (
-                  <section className="mt-8 bg-background text-text max-w-layout mx-auto pt-2">
+                  <section className="pt-16 bg-background text-text max-w-layout mx-auto" ref={setRef(workoutProgram.category)} >
                      <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// {workoutProgram.category}</div>
                      <div className="w-full">
                         <Swiper

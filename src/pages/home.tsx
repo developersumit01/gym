@@ -102,7 +102,7 @@ const Home = () => {
             <div className="bg-background text-center text-text max-w-layout mx-auto">
                <div className="flex justify-between item-center mx-4 md:mx-0 mb-4 items-center"><span className="text-2xl font-medium text-start text-primary">/// GOODS</span> <Button name="View All Products" /></div>
                {/* card container */}
-               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
+               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
                   {/* card */}
                   {products.map((product: any) => (
                      <ProductCard
@@ -126,14 +126,14 @@ const Home = () => {
                            return (
                               <img
                                  src={image}
-                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-2"
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-2"
                               />
                            );
                         }else{
                            return (
                               <img
                                  src={image}
-                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-1"
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-1"
                               />
                            );
                         }
@@ -142,14 +142,14 @@ const Home = () => {
                            return (
                               <img
                                  src={image}
-                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-2"
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-2"
                               />
                            );
                         }else{
                            return (
                               <img
                                  src={image}
-                                 className="object-cover w-full h-48 md:h-72 rounded-2xl col-span-1"
+                                 className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-1"
                               />
                            );
                         }
