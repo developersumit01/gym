@@ -1,11 +1,13 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
 import WorkoutProgramCard from "../components/workoutProgramCard";
 import WorkoutCard from "../components/workoutCard";
+import { useLocation } from "react-router-dom";
 
 const WorkoutPrograms = () => {
+   const { sectionId } = useLocation().state || {}
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
    const workoutProgramsRef = useRef<{ [ key: string ]: HTMLElement }>({});
    const setRef = (id: string) => (ele: HTMLElement) => {
@@ -14,6 +16,11 @@ const WorkoutPrograms = () => {
    const handleScrollToSection = (id: string) => {
       workoutProgramsRef.current[ id ].scrollIntoView({ behavior: 'smooth' })
    }
+   useEffect(() => {
+      if (sectionId) {
+         handleScrollToSection(sectionId);
+      }
+   }, [ sectionId ])
    return (
       <>
          <section className="mt-[64px] bg-background text-text max-w-layout mx-auto pt-6">

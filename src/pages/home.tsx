@@ -10,11 +10,16 @@ import { ProductsContext } from "../contexts/product.context";
 import ProductCard from "../components/productCard";
 import { GallaryContext } from "../contexts/gallery.context";
 import { RecipesConrext } from "../contexts/recipes.context";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+   const navigate = useNavigate();
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
    const [ products ] = useContext(ProductsContext);
    const [ gallery ] = useContext(GallaryContext);
    const recipes = useContext(RecipesConrext);
+   const handleWorkoutStart = (workoutProgramName: string) => {
+      navigate('/workout-programs', { state: { sectionId: workoutProgramName } })
+   }
    return (
       <>
          <main className="flex flex-col items-center md:justify-center justify-start bg-background text-text md:px-4">
@@ -90,6 +95,7 @@ const Home = () => {
                         <WorkoutProgramCard
                            image={program.image}
                            text={program.category}
+                           onClick={() => { handleWorkoutStart(program.category) }}
                         />
                      </SwiperSlide>
                   ))}
@@ -120,16 +126,16 @@ const Home = () => {
             <div className="bg-background text-center text-text max-w-layout mx-auto">
                <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// GALLERY</div>
                <div className={`grid grid-cols-1 xs:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 px-4 md:px-0`}>
-                  {gallery && gallery.map((image: string,index:number) => {
-                     if(parseInt((index/4).toString())%2==0){
-                        if(index%2==1){
+                  {gallery && gallery.map((image: string, index: number) => {
+                     if (parseInt((index / 4).toString()) % 2 == 0) {
+                        if (index % 2 == 1) {
                            return (
                               <img
                                  src={image}
                                  className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-2"
                               />
                            );
-                        }else{
+                        } else {
                            return (
                               <img
                                  src={image}
@@ -137,15 +143,15 @@ const Home = () => {
                               />
                            );
                         }
-                     }else{
-                        if(index%2==0){
+                     } else {
+                        if (index % 2 == 0) {
                            return (
                               <img
                                  src={image}
                                  className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-2"
                               />
                            );
-                        }else{
+                        } else {
                            return (
                               <img
                                  src={image}
