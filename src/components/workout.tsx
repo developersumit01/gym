@@ -1,5 +1,4 @@
 import { NavLink, useLocation, useParams } from "react-router-dom";
-import img from "../assets/images/workoutPrograms/image5.png"
 import { filterWorkoutData } from "../contexts/workout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
