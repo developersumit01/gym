@@ -12,7 +12,7 @@ const About = () => {
             <img src={AboutBackgroundImage} alt="About section background image" className='absolute inset-0 z-0 h-full w-full object-cover' />
             <div className="absolute inset-0 bg-overlay w-full h-full z-10"></div>
             {/* Content section of the about page start */}
-            <section className="z-20 flex flex-col items-start justify-center text-center px-4 md:max-w-2/3 mt-[65px]">
+            <section className="z-20 flex flex-col items-start justify-center text-center px-4 md:max-w-2/3 mt-[65px] pt-2">
                <div className="text-3xl md:text-7xl mb-3 z-20 text-start">get more out of your</div>
                <div className="text-3xl md:text-7xl font-bold md:tracking-widest text-start z-20">Fitness Journey</div>
                <p className='z-20 text-start my-6'>Join the community to track your progress</p>

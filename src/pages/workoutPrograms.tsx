@@ -17,7 +17,7 @@ const WorkoutPrograms = () => {
    return (
       <>
          <section className="mt-[64px] bg-background text-text max-w-layout mx-auto pt-6">
-            <div className="text-3xl font-semibold md:text-4xl mb-4">Free Workout Programs</div>
+            <div className="text-3xl font-semibold md:text-4xl mb-4 pl-2 md:pl-0">Free Workout Programs</div>
             <div className="w-full">
                <Swiper
                   navigation={true}
