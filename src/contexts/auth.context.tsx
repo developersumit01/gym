@@ -4,7 +4,7 @@ interface AuthProps {
 }
 export const AuthContext = createContext('' as any);
 const AuthContextProvider: React.FC<AuthProps> = ({ children }) => {
-   const [ auth, setAuth ] = useState<boolean>(false);
+   const [ auth, setAuth ] = useState<boolean>(true);
    return (
       <AuthContext.Provider value={[ auth, setAuth ]}>
          {children}
