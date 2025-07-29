@@ -2,6 +2,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { type ReactNode } from "react";
 import type React from "react";
 import useAuth from "../hooks/useAuth.hook";
+import { SIGN_UP } from "../absolute-routes";
 interface AuthGuardProps {
    children: ReactNode;
 }
@@ -13,7 +14,7 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
          {auth ? (
             children
          ) : (
-            <Navigate to={"/auth/sign-up"} state={{ form: location }} replace />
+            <Navigate to={SIGN_UP} state={{ form: location }} replace />
          )}
       </>
    );

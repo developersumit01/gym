@@ -23,7 +23,6 @@ const AppRoute = () => {
          {/* Auth route end here */}
          {/* Public routes start here */}
          <Routes>
-
             <Route
                path={routes.HOME}
                element={
