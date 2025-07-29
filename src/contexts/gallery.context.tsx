@@ -6,7 +6,7 @@ interface GallaryContextProps {
    children: React.ReactNode;
 }
 export const GallaryContext = createContext('' as any);
-export const GallaryContextProvider: React.FC<GallaryContextProps> = ({ children }) => {
+const GallaryContextProvider: React.FC<GallaryContextProps> = ({ children }) => {
    const [ value, setValue ] = useState([Gallary1, Gallary2, Gallary3,Gallary1, Gallary2, Gallary3,Gallary1,Gallary2]);
    // const [ value, setValue ] = useState([Gallary1, Gallary2, Gallary3,Gallary1]);
    return (
@@ -15,3 +15,5 @@ export const GallaryContextProvider: React.FC<GallaryContextProps> = ({ children
       </GallaryContext.Provider>
    )
 }
+
+export default GallaryContextProvider;

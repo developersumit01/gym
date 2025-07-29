@@ -11,6 +11,7 @@ import ProductCard from "../components/productCard";
 import { GallaryContext } from "../contexts/gallery.context";
 import { RecipesConrext } from "../contexts/recipes.context";
 import { useNavigate } from "react-router-dom";
+import Heading from "../components/heading";
 const Home = () => {
    const navigate = useNavigate();
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
@@ -64,7 +65,7 @@ const Home = () => {
          {/* Programs List Start here */}
          <section className="bg-background text-text md:px-4">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
-               <div className="text-2xl font-medium text-start ml-4 md:ml-0 mb-4">Free Workout Programs</div>
+               <Heading headingName="Free Workout Programs" />
                <Swiper
                   navigation={true}
                   modules={[ Navigation ]}
@@ -106,7 +107,7 @@ const Home = () => {
          {/* Goods List Start here */}
          <section className="bg-background text-text md:px-4 pt-8">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
-               <div className="flex justify-between item-center mx-4 md:mx-0 mb-4 items-center"><span className="text-2xl font-medium text-start text-primary">/// GOODS</span> <Button name="View All Products" /></div>
+               <Heading headingName="GOODS" buttonText="View All Products" />
                {/* card container */}
                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
                   {/* card */}
@@ -124,7 +125,7 @@ const Home = () => {
          {/* Gallery Section start here */}
          <section className="bg-background text-text md:px-4 pt-8">
             <div className="bg-background text-center text-text max-w-layout mx-auto">
-               <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// GALLERY</div>
+               <Heading headingName="GALLERY" />
                <div className={`grid grid-cols-1 xs:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 px-4 md:px-0`}>
                   {gallery && gallery.map((image: string, index: number) => {
                      if (parseInt((index / 4).toString()) % 2 == 0) {
@@ -170,7 +171,7 @@ const Home = () => {
          <section className="bg-background text-text md:px-4 pt-8">
             <div className="max-w-layout mx-auto">
                {/* Title */}
-               <div className="flex justify-between item-center mx-4 md:mx-0 items-center"><span className="text-2xl font-medium text-primary">/// Recipes</span> <Button name="View More Recipes" /> </div>
+               <Heading headingName="Recipes" buttonText="View More Recipes" />
                {/* recipes container start here */}
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_400px] pt-4 gap-14 px-4 md:px-0">
                   {/* Left section */}

@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import AboutBackgroundImage from '../assets/images/aboutBackground.png';
-import Button from '../components/button';
 import { AboutCardContext } from '../contexts/aboutCard.context';
 import SmileyIcon from '../assets/icons/smiley.svg';
 const About = () => {
@@ -17,7 +16,7 @@ const About = () => {
                <div className="text-3xl md:text-7xl font-bold md:tracking-widest text-start z-20">Fitness Journey</div>
                <p className='z-20 text-start my-6'>Join the community to track your progress</p>
                <p className='text-start z-20 md:max-w-[60%]'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit</p>
-               <Button name='Create Account' className='z-20 my-6' />
+               {/* <Button name='Create Account' className='z-20 my-6' /> */}
             </section>
          </div>
       </section>

@@ -17,7 +17,7 @@ export default {
         darkBackground:'var(--dark-background-color)'
       },
       maxWidth: {
-        'layout': '1280px',
+        'layout': '1380px',
       },
       fontFamily: {
         sans: ['Outfit', 'sans-serif'],

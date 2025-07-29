@@ -5,6 +5,7 @@ import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
 import WorkoutProgramCard from "../components/workoutProgramCard";
 import WorkoutCard from "../components/workoutCard";
 import { useLocation } from "react-router-dom";
+import Heading from "../components/heading";
 
 const WorkoutPrograms = () => {
    const { sectionId } = useLocation().state || {}
@@ -24,7 +25,7 @@ const WorkoutPrograms = () => {
    return (
       <>
          <section className="mt-[64px] bg-background text-text max-w-layout mx-auto pt-6">
-            <div className="text-3xl font-semibold md:text-4xl mb-4 pl-2 md:pl-0">Free Workout Programs</div>
+            <div className="text-3xl font-semibold md:text-4xl mb-4 pl-2 md:px-4">Free Workout Programs</div>
             <div className="w-full">
                <Swiper
                   navigation={true}
@@ -66,8 +67,8 @@ const WorkoutPrograms = () => {
          {
             workoutPrograms.map((workoutProgram: any) => {
                return (
-                  <section className="pt-16 bg-background text-text max-w-layout mx-auto" ref={setRef(workoutProgram.category)} >
-                     <div className="text-2xl font-medium text-primary ml-4 md:ml-0 mb-4 text-start">/// {workoutProgram.category}</div>
+                  <section className="pt-16 bg-background text-text max-w-layout mx-auto md:px-4" ref={setRef(workoutProgram.category)} >
+                     <Heading headingName={workoutProgram.category} />
                      <div className="w-full">
                         <Swiper
                            navigation={true}
