@@ -12,6 +12,7 @@ import { GallaryContext } from "../contexts/gallery.context";
 import { RecipesConrext } from "../contexts/recipes.context";
 import { useNavigate } from "react-router-dom";
 import Heading from "../components/heading";
+import { WORKOUT_PROGRAMS } from "../routes";
 const Home = () => {
    const navigate = useNavigate();
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
@@ -19,7 +20,7 @@ const Home = () => {
    const [ gallery ] = useContext(GallaryContext);
    const recipes = useContext(RecipesConrext);
    const handleWorkoutStart = (workoutProgramName: string) => {
-      navigate('/workout-programs', { state: { sectionId: workoutProgramName } })
+      navigate(`/${WORKOUT_PROGRAMS}`, { state: { sectionId: workoutProgramName } })
    }
    return (
       <>

@@ -6,3 +6,4 @@ export const HOME = '';
 export const ABOUT = 'about';
 export const WORKOUT_PROGRAMS = 'workout-programs';
 export const STORE = 'store';
+export const DAY = 'day';
