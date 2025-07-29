@@ -7,7 +7,6 @@ interface AuthGuardProps {
 }
 const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
    const [ auth ] = useAuth();
-   console.log("Hello from auth component");
    const location = useLocation();
    return (
       <>

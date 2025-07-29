@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./layout";
 import Home from "./pages/home";
@@ -12,15 +11,21 @@ import { WorkoutProgramsProvider } from "./contexts/workoutPrograms.context";
 import { RecipesContextProvider } from "./contexts/recipes.context";
 import SignUp from "./pages/auth/signUp";
 import AuthGuard from "./guards/auth.gaurd";
+import * as routes from "./absolute-routes";
 
 const AppRoute = () => {
    return (
       <Layout>
+         {/* Auth routes start here */}
+         <Routes>
+            <Route path={routes.SIGN_UP} element={<SignUp />} />
+         </Routes>
+         {/* Auth route end here */}
          {/* Public routes start here */}
          <Routes>
-            <Route path="auth/sign-up" element={<SignUp />} />
+
             <Route
-               path=""
+               path={routes.HOME}
                element={
                   <GallaryContextProvider>
                      <ProductsProvider>
@@ -34,7 +39,7 @@ const AppRoute = () => {
                }
             />
             <Route
-               path="about"
+               path={routes.ABOUT}
                element={
                   <AuthGuard>
                      <AboutCardContextProvider>
@@ -44,7 +49,7 @@ const AppRoute = () => {
                }
             />
             <Route
-               path="workout-programs/"
+               path={routes.WORKOUT_PROGRAMS}
                element={
                   <WorkoutProgramsProvider>
                      <WorkoutPrograms />
@@ -52,7 +57,7 @@ const AppRoute = () => {
                }
             />
             <Route
-               path="workout-programs/:workoutName/day/:day"
+               path={routes.WORKOUT_PROGRAMS_DAY}
                element={<Workout />}
             />
             {/* Add more routes as needed */}
@@ -61,7 +66,7 @@ const AppRoute = () => {
 
          {/* Private route start here */}
          <Routes>
-               <Route path="dashboard" />
+            <Route path="dashboard" />
          </Routes>
          {/* Private route end here */}
       </Layout>

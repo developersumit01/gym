@@ -2,18 +2,18 @@ import React from "react";
 import Header from "./components/header";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
-import useAuth from "./hooks/useAuth.hook";
+import { useLocation } from "react-router-dom";
+import { AUTH } from "./routes";
 interface LayoutProps {
   children: React.ReactNode;
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [ auth ] = useAuth();
-  console.log(auth, 'kadjhaksdjhaks')
+  const location = useLocation()
   return (
     <>
       <Header />
       {children}
-      {auth && <Contact />}
+      {!location.pathname.includes(AUTH) && <Contact />}
       <Footer />
     </>
   );

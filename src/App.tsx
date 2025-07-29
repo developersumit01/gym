@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AppRoute from "./route";
+import AppRoute from "./app.route";
 import ScrollTop from "./components/scrollTop";
 import AuthContextProvider from "./contexts/auth.context";
 const App = () => {
