@@ -1,4 +1,4 @@
-import ContactImage from '../assets/images/contact.png';
+import { ContactImage } from '../assets';
 import Button from '../components/button';
 const Contact = () => {
    return (

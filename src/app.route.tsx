@@ -61,7 +61,6 @@ const AppRoute = () => {
                path={routes.WORKOUT_PROGRAMS_DAY}
                element={<Workout />}
             />
-            {/* Add more routes as needed */}
          </Routes>
          {/* Public route end here */}
 

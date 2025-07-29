@@ -6,4 +6,4 @@ export const HOME = `/${routes.HOME}`;
 export const ABOUT = `/${routes.ABOUT}`;
 export const WORKOUT_PROGRAMS = `/${routes.WORKOUT_PROGRAMS}`;
 export const STORE = `/${routes.STORE}`;
-export const WORKOUT_PROGRAMS_DAY = `/${routes.WORKOUT_PROGRAMS}/:workoutName/day/:day`;
+export const WORKOUT_PROGRAMS_DAY = `/${routes.WORKOUT_PROGRAMS}/:workoutName/${routes.DAY}/:day`;

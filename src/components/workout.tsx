@@ -2,6 +2,7 @@ import { NavLink, useLocation, useParams } from "react-router-dom";
 import { filterWorkoutData } from "../contexts/workout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import {DAY, WORKOUT_PROGRAMS} from "../routes"
 
 const Workout = () => {
    const { workoutName, day } = useParams();
@@ -51,7 +52,7 @@ const Workout = () => {
                         {
                            workoutData.workout.map((program: any, index: number) => (
                               <SwiperSlide key={program.id} style={{ width: '56px', display: 'flex', justifyContent: 'center' }}>
-                                 <NavLink to={`/workout-programs/${workoutName}/day/${index + 1}`} state={{image:image}} className={({ isActive }) =>
+                                 <NavLink to={`/${WORKOUT_PROGRAMS}/${workoutName}/${DAY}/${index + 1}`} state={{image:image}} className={({ isActive }) =>
                                     `w-14 h-12 text-nowrap cursor-pointer text-authText flex justify-center items-center rounded-xl font-semibold ${isActive ? "bg-primary" : "bg-text"
                                     }`
                                  }>
