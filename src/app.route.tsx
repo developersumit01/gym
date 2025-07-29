@@ -12,6 +12,7 @@ import { RecipesContextProvider } from "./contexts/recipes.context";
 import SignUp from "./pages/auth/signUp";
 import AuthGuard from "./guards/auth.gaurd";
 import * as routes from "./absolute-routes";
+import Login from "./pages/auth/login";
 
 const AppRoute = () => {
    return (
@@ -19,6 +20,7 @@ const AppRoute = () => {
          {/* Auth routes start here */}
          <Routes>
             <Route path={routes.SIGN_UP} element={<SignUp />} />
+            <Route path={routes.LOGIN} element={<Login />} />
          </Routes>
          {/* Auth route end here */}
          {/* Public routes start here */}
