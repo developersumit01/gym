@@ -12,7 +12,7 @@ const WorkoutProgramCard: React.FC<WorkoutProgramCardProps> = ({ image, text, on
          <div className="relative w-[10rem]">
             {/* image container */}
             <div className="h-[20rem] w-[10rem]">
-               <img src={image} alt="" className='h-full w-full' />
+               <img src={image} alt="" className='h-full w-full' loading="lazy" />
             </div>
             {/* overlay */}
             <div className="absolute top-0 left-0 w-full h-full bg-black/75 flex items-center justify-start pt-8 vertical-rl rotate-180 text-xl font-semibold">{text}</div>

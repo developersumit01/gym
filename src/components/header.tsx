@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Logo from "../assets/images/logo.png";
-import HamburgerIcon from "../assets/icons/hamburger.svg";
+import {Logo} from "../assets/index";
+import {HamburgerIcon} from "../assets/icons/index";
 import Button from "./button";
 import * as routes from "../absolute-routes";
 const Header = () => {

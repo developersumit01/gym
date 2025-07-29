@@ -1,26 +1,5 @@
 import React, { createContext, useState } from "react";
-import CardioImage from "../assets/images/workoutPrograms/cardio.png";
-import GroupImage from "../assets/images/workoutPrograms/group.png";
-import YogaImage from "../assets/images/workoutPrograms/yoga.png";
-import Image1 from "../assets/images/workoutPrograms/image1.png";
-import Image2 from "../assets/images/workoutPrograms/image2.png";
-import Image3 from "../assets/images/workoutPrograms/image3.png";
-import Image4 from "../assets/images/workoutPrograms/image4.png";
-import Image5 from "../assets/images/workoutPrograms/image5.png";
-import Image6 from "../assets/images/workoutPrograms/image6.png";
-import Image7 from "../assets/images/workoutPrograms/image7.png";
-import Image8 from "../assets/images/workoutPrograms/image8.png";
-import Image9 from "../assets/images/workoutPrograms/image9.png";
-import Image10 from "../assets/images/workoutPrograms/image10.png";
-import Image11 from "../assets/images/workoutPrograms/image11.png";
-import Image12 from "../assets/images/workoutPrograms/image12.png";
-import Image13 from "../assets/images/workoutPrograms/image13.png";
-import Image14 from "../assets/images/workoutPrograms/image14.png";
-import Image15 from "../assets/images/workoutPrograms/image15.png";
-import Image16 from "../assets/images/workoutPrograms/image16.png";
-import Image17 from "../assets/images/workoutPrograms/image17.png";
-import Image18 from "../assets/images/workoutPrograms/image18.png";
-import Image19 from "../assets/images/workoutPrograms/image19.png";
+import * as workoutImages from "../assets/images/workoutPrograms.images.tsx"
 import { filterWorkoutData } from "./workout.tsx";
 interface WorkoutProgram {
    children?: React.ReactNode;
@@ -28,9 +7,9 @@ interface WorkoutProgram {
 export const WorkoutProgramsContext = createContext('' as any);
 export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) => {
    const images = [
-      Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9,
-      Image10, Image11, Image12, Image13, Image14, Image15, Image16, Image17,
-      Image18, Image19
+      workoutImages.Image1, workoutImages.Image2, workoutImages.Image3, workoutImages.Image4, workoutImages.Image5, workoutImages.Image6, workoutImages.Image7, workoutImages.Image8, workoutImages.Image9,
+      workoutImages.Image10, workoutImages.Image11, workoutImages.Image12, workoutImages.Image13, workoutImages.Image14, workoutImages.Image15, workoutImages.Image16, workoutImages.Image17,
+      workoutImages.Image18, workoutImages.Image19
    ];
    function getRandomImage() {
       return images[ Math.floor(Math.random() * images.length) ];
@@ -38,7 +17,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
    const [ value ] = useState([
       {
          category: 'Beginner Friendly',
-         image: YogaImage,
+         image: workoutImages.YogaImage,
          peopleTried: 1973,
          items: [
             { name: 'Wall Push-Ups', img: getRandomImage() },
@@ -52,7 +31,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
       },
       {
          category: 'Moderate to Advanced',
-         image: CardioImage,
+         image: workoutImages.CardioImage,
          peopleTried: 6289,
          items: [
             { name: 'Push-Ups', img: getRandomImage() },
@@ -66,7 +45,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
       },
       {
          category: 'Strength Training',
-         image: GroupImage,
+         image: workoutImages.GroupImage,
          peopleTried: 1837,
          items: [
             { name: 'Weighted Squats', img: getRandomImage() },
@@ -80,7 +59,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
       },
       {
          category: 'Weight Loss Focus',
-         image: YogaImage,
+         image: workoutImages.YogaImage,
          peopleTried: 1739,
          items: [
             { name: 'Jumping Jacks', img: getRandomImage() },
@@ -94,7 +73,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
       },
       {
          category: 'Muscle Building',
-         image: CardioImage,
+         image: workoutImages.CardioImage,
          peopleTried: 1283,
          items: [
             { name: 'Barbell Squats', img: getRandomImage() },
@@ -108,7 +87,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
       },
       {
          category: 'Cardio Intensive',
-         image: YogaImage,
+         image: workoutImages.YogaImage,
          peopleTried: 2849,
          items: [
             { name: 'Jump Rope', img: getRandomImage() },
@@ -122,7 +101,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
       },
       {
          category: 'Functional Fitness',
-         image: CardioImage,
+         image: workoutImages.CardioImage,
          peopleTried: 2948,
          items: [
             { name: 'Kettlebell Swings', img: getRandomImage() },
@@ -136,7 +115,7 @@ export const WorkoutProgramsProvider: React.FC<WorkoutProgram> = ({ children }) 
       },
       {
          category: 'HIIT & Conditioning',
-         image: GroupImage,
+         image: workoutImages.GroupImage,
          peopleTried: 4929,
          items: [
             { name: 'Burpees', img: getRandomImage() },
