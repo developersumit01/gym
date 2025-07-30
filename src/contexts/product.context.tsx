@@ -1,7 +1,5 @@
 import React, { createContext, useState } from "react";
-import tShirtImage from "../assets/images/products/t-shirt.png";
-import BagImage from "../assets/images/products/bag.png";
-import WaterBottleImage from "../assets/images/products/water-bottle.png";
+import * as productImage from "../assets/images/products.images";
 interface Products {
    children: React.ReactNode;
 }
@@ -9,22 +7,22 @@ export const ProductsContext = createContext('' as any);
 export const ProductsProvider: React.FC<Products> = ({ children }) => {
    const [ value, setValue ] = useState([ {
       name: 'Gym T-Shirt',
-      image: tShirtImage,
+      image: productImage.tShirtImage,
       id: '1',
    },
    {
       name: 'Gym Bag',
-      image: BagImage,
+      image: productImage.BagImage,
       id: '2',
    },
    {
       name: 'Water Bottle',
-      image: WaterBottleImage,
+      image: productImage.WaterBottleImage,
       id: '3',
    },
    {
       name: 'Gym T-Shirt',
-      image: tShirtImage,
+      image: productImage.tShirtImage,
       id: '4',
    }, ]);
    return (

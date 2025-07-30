@@ -1,7 +1,6 @@
-import ContactImage from "../../assets/images/contact.png";
 import Button from "../../components/button";
 import Input from "../../components/input";
-import Logo from "../../assets/images/logo.png";
+import { Logo, ContactImage } from "../../assets/index.tsx"
 import { NavLink } from "react-router-dom";
 import { SIGN_UP, FORGET_PASSWORD } from "../../absolute-routes"
 const Login = () => {

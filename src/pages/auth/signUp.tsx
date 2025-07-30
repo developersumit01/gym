@@ -1,7 +1,6 @@
-import ContactImage from "../../assets/images/contact.png";
 import Button from "../../components/button";
 import Input from "../../components/input";
-import Logo from "../../assets/images/logo.png";
+import {Logo,ContactImage} from "../../assets/index";
 import { useState } from "react";
 const SignUp = () => {
    const [user,setUser]=useState({
@@ -24,7 +23,7 @@ const SignUp = () => {
          <div className="max-w-layout mx-auto mt-16">
             <section className="px-4 md:px-8 py-8">
                <div className="w-full md:hidden flex justify-center items-center gap-3 mb-4 flex-col text-center">
-                  <img src={Logo} alt="" className="w-24" />
+                  <img src={Logo} alt="" className="w-24" loading="lazy" />
                   <div className="font-semibold text-3xl text-text">Sign UP</div>
                </div>
                <div className="text-primary md:text-text md:text-5xl text-2xl font-semibold mb-4">Track Your Progress & More!</div>
@@ -40,7 +39,7 @@ const SignUp = () => {
                      </form>
                   </div>
                   <div className="md:pr-8 hidden md:block md:py-4">
-                     <img src={ContactImage} alt="" className='rounded-2xl md:w-full h-auto' />
+                     <img src={ContactImage} alt="" className='rounded-2xl md:w-full h-auto' loading="lazy" />
                   </div>
                </div>
             </section>

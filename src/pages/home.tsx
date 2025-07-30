@@ -1,4 +1,4 @@
-import HeroSectionImage from "../assets/images/heroSectionImage.png";
+import {HeroSectionImage} from "../assets/index";
 import Button from "../components/button";
 import { useContext } from "react";
 import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
@@ -12,6 +12,7 @@ import { GallaryContext } from "../contexts/gallery.context";
 import { RecipesConrext } from "../contexts/recipes.context";
 import { useNavigate } from "react-router-dom";
 import Heading from "../components/heading";
+import { WORKOUT_PROGRAMS } from "../routes";
 const Home = () => {
    const navigate = useNavigate();
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);
@@ -19,7 +20,7 @@ const Home = () => {
    const [ gallery ] = useContext(GallaryContext);
    const recipes = useContext(RecipesConrext);
    const handleWorkoutStart = (workoutProgramName: string) => {
-      navigate('/workout-programs', { state: { sectionId: workoutProgramName } })
+      navigate(`/${WORKOUT_PROGRAMS}`, { state: { sectionId: workoutProgramName } })
    }
    return (
       <>
@@ -55,7 +56,7 @@ const Home = () => {
                      </div>
 
                      <div className="items-center justify-center md:flex hidden">
-                        <img src={HeroSectionImage} alt="Hero Section Image" className="rounded-lg" />
+                        <img src={HeroSectionImage} alt="Hero Section Image" className="rounded-lg" loading="lazy" />
                      </div>
                   </div>
                </div>
@@ -133,6 +134,7 @@ const Home = () => {
                            return (
                               <img
                                  src={image}
+                                 loading="lazy"
                                  className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-2"
                               />
                            );
@@ -140,6 +142,7 @@ const Home = () => {
                            return (
                               <img
                                  src={image}
+                                 loading="lazy"
                                  className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-1"
                               />
                            );
@@ -149,6 +152,7 @@ const Home = () => {
                            return (
                               <img
                                  src={image}
+                                 loading="lazy"
                                  className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-2"
                               />
                            );
@@ -156,6 +160,7 @@ const Home = () => {
                            return (
                               <img
                                  src={image}
+                                 loading="lazy"
                                  className="object-cover w-full h-48 md:h-72 rounded-2xl xs:col-span-1"
                               />
                            );
@@ -181,7 +186,7 @@ const Home = () => {
                         return (
                            <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-4 items-center">
                               <div className="mx-auto md:mx-0">
-                                 <img src={recipe.img} alt="" className="rounded-2xl max-h-[440px]" />
+                                 <img src={recipe.img} alt="" className="rounded-2xl max-h-[440px]" loading="lazy" />
                               </div>
                               <div className="">
                                  <div className="text-2xl md:text-3xl mb-4 font-semibold">{recipe.name}</div>
@@ -202,6 +207,7 @@ const Home = () => {
                                     src={recipe.img}
                                     alt=""
                                     className="w-28 h-24 rounded-xl"
+                                    loading="lazy"
                                  />
                                  <div>
                                     <div className="font-medium">{recipe.name}</div>
