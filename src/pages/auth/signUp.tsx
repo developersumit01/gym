@@ -2,7 +2,23 @@ import ContactImage from "../../assets/images/contact.png";
 import Button from "../../components/button";
 import Input from "../../components/input";
 import Logo from "../../assets/images/logo.png";
+import { useState } from "react";
 const SignUp = () => {
+   const [user,setUser]=useState({
+      name: "",
+      email: "",
+      phone: "",
+      city: "",
+      password: ""
+   });
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+      setUser({ ...user, [name]: value });
+   };
+   const handleSubmit = () => {
+      localStorage.setItem("user", JSON.stringify(user));
+      alert("User Registered Successfully!");
+   }
    return (
       <>
          <div className="max-w-layout mx-auto mt-16">
@@ -14,12 +30,12 @@ const SignUp = () => {
                <div className="text-primary md:text-text md:text-5xl text-2xl font-semibold mb-4">Track Your Progress & More!</div>
                <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] lg:grid-cols-[1fr_500px] gap-4">
                   <div className="w-full md:max-w-2xl flex justify-center items-center md:p-4 p-1">
-                     <form className="flex flex-col gap-4 w-full" action={() => {}}>
-                        <Input type="text" value="" placeholder="Enter Your Name" />
-                        <Input type="text" value="" placeholder="Enter Your Email" />
-                        <Input type="text" value="" placeholder="Enter Your Phone No." />
-                        <Input type="text" value="" placeholder="Enter Your City" />
-                        <Input type="text" value="" placeholder="Enter Your Password" />
+                     <form className="flex flex-col gap-4 w-full" action={handleSubmit}>
+                        <Input type="text" value={user.name} onChange={handleChange} name='name' placeholder="Enter Your Name" />
+                        <Input type="text" value={user.email} onChange={handleChange} name='email' placeholder="Enter Your Email" />
+                        <Input type="text" value={user.phone} onChange={handleChange} name='phone' placeholder="Enter Your Phone No." />
+                        <Input type="text" value={user.city} onChange={handleChange} name='city' placeholder="Enter Your City" />
+                        <Input type="password" value={user.password} onChange={handleChange} name='password' placeholder="Enter Your Password" />
                         <Button name='Submit' className='text-text' />
                      </form>
                   </div>
