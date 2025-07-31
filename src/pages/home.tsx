@@ -1,6 +1,6 @@
-import {HeroSectionImage} from "../assets/index";
+import { HeroSectionImage } from "../assets/index";
 import Button from "../components/button";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { WorkoutProgramsContext } from "../contexts/workoutPrograms.context";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -13,6 +13,7 @@ import { RecipesConrext } from "../contexts/recipes.context";
 import { useNavigate } from "react-router-dom";
 import Heading from "../components/heading";
 import { WORKOUT_PROGRAMS } from "../routes";
+import useAuth from "../hooks/useAuth.hook";
 const Home = () => {
    const navigate = useNavigate();
    const [ workoutPrograms ] = useContext(WorkoutProgramsContext);

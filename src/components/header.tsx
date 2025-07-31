@@ -1,12 +1,14 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {Logo} from "../assets/index";
-import {HamburgerIcon} from "../assets/icons/index";
+import { Logo } from "../assets/index";
+import { HamburgerIcon } from "../assets/icons/index";
 import Button from "./button";
 import * as routes from "../absolute-routes";
+import useAuth from "../hooks/useAuth.hook";
 const Header = () => {
    const [ isHeaderOpen, setIsHeaderOpen ] = useState<boolean>(false);
    const navigate = useNavigate()
+   const [ auth ] = useAuth();
    return (
       <>
          <header className="flex fixed z-40 top-0 left-0 w-full justify-between items-center p-2 bg-header-background text-text md:px-4">
@@ -18,8 +20,12 @@ const Header = () => {
                   <NavLink className="px-2" to={routes.HOME}>Home</NavLink>
                   <NavLink className="px-2" to={routes.ABOUT}>About</NavLink>
                   <NavLink className="px-2" to={routes.WORKOUT_PROGRAMS}>Workout Programs</NavLink>
-                  <NavLink className="px-2" to={routes.LOGIN}>Login</NavLink>
-                  <Button name="Sign up" onClick={() => { navigate(routes.SIGN_UP) }} />
+                  {
+                     !auth && <>
+                        <NavLink className="px-2" to={routes.LOGIN}>Login</NavLink>
+                        <Button name="Sign up" onClick={() => { navigate(routes.SIGN_UP) }} />
+                     </>
+                  }
                   {/* <NavLink className="px-2" to="/recipes">Recipes</NavLink>
                   <NavLink className="px-2" to="/store">Store</NavLink> */}
 
@@ -40,8 +46,12 @@ const Header = () => {
             <NavLink to={routes.HOME} className="w-full py-1 px-2 focus-bg-fill">Home</NavLink>
             <NavLink to={routes.ABOUT} className="w-full py-1 px-2 focus-bg-fill">About</NavLink>
             <NavLink to={routes.WORKOUT_PROGRAMS} className="w-full py-1 px-2 focus-bg-fill">Workout Programs</NavLink>
-            <NavLink className="w-full py-1 px-2 focus-bg-fill" to={routes.LOGIN}>Login</NavLink>
-            <Button name="Sign up" onClick={() => { navigate(routes.SIGN_UP) }} />
+            {
+               !auth && <>
+                  <NavLink className="w-full py-1 px-2 focus-bg-fill" to={routes.LOGIN}>Login</NavLink>
+                  <Button name="Sign up" onClick={() => { navigate(routes.SIGN_UP) }} />
+               </>
+            }
             {/* <NavLink to="/recipes" className="w-full py-1 px-2 focus-bg-fill">Recipes</NavLink>
             <NavLink to="/store" className="w-full py-1 px-2 focus-bg-fill">Store</NavLink>
             <NavLink to="/login" className="w-full py-1 px-2 focus-bg-fill">Login</NavLink>

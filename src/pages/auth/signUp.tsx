@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useValidateInput } from "../../hooks/validator";
 import { signUpFormSchema } from "../../schemas/signUpFrom.schema";
 import { useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth.hook";
 const SignUp = () => {
    const navigate = useNavigate();
    const location =useLocation();
@@ -15,6 +16,7 @@ const SignUp = () => {
       city: "",
       password: "",
    });
+   const [_, setAuth] = useAuth();
    const [ isError, setIsError ] = useState(true);
    const [ error, setError ] = useState<any>({});
    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +45,8 @@ const SignUp = () => {
          city: "",
          password: "",
       });
+      setAuth(true);
+      // Redirect to the home page or the page user was trying to access before signing up
       navigate(location.state?.from || "/", { replace: true });
    };
    return (
