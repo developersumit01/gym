@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import * as recipesImage from '../assets/images/recipes.images';
 interface RecipesContextProps {
   children: React.ReactNode;
 }
@@ -8,7 +9,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 1,
       "name": "Falafel‑Waffle French Toast",
-      "img": "https://cookingandcussing.com/wp-content/uploads/2019/08/IMG_7669-min.jpg.webp",
+      "img": recipesImage.Image1,
       "description": "A fun twist on a classic! Flavours of falafel in a crispy waffle form—no deep‑frying. Served with cucumber‑tomato salad and cilantro yogurt sauce for a refreshing brunch.",
       "recipe": [
         "White Bread: Thick‑cut, sturdy, slightly stale slices absorb the custard better.",
@@ -31,7 +32,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 2,
       "name": "Avocado‑Egg Boat",
-      "img": "https://img-global.cpcdn.com/recipes/917ed46a9e1bc356/300x426cq80/avocado-egg-boat-recipe-main-photo.webp",
+      "img": recipesImage.Image2,
       "description": "Baked avocado halves filled with egg, seasoned with herbs and cheese—simple, nutritious, and perfect for brunch.",
       "recipe": [
         "Avocado: Halved and pitted to hold the egg.",
@@ -54,7 +55,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 3,
       "name": "Berry‑Ricotta Toast",
-      "img": "https://cheneetoday.com/wp-content/uploads/2022/05/Blueberry-toast-featured.jpg",
+      "img": recipesImage.Image3,
       "description": "Toasted bread topped with creamy ricotta, fresh berries, honey, and a sprinkle of mint—bright and elegant.",
       "recipe": [
         "Bread: Lightly toasted for crunch.",
@@ -77,7 +78,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 4,
       "name": "Sweet Potato Hash",
-      "img": "https://img-global.cpcdn.com/recipes/a68712092d66c676/300x426cq80/sweet-potato-hash-recipe-main-photo.webp",
+      "img": recipesImage.Image4,
       "description": "Roasted sweet potato cubes with peppers, onions, and spices—topped with a fried egg for a hearty morning meal.",
       "recipe": [
         "Sweet potato: Diced and roasted until caramelized.",
@@ -100,7 +101,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 5,
       "name": "Spinach‑Mushroom Omelette",
-      "img": "https://img-global.cpcdn.com/recipes/645f789911954737/300x426cq80/spinach-mushroom-omelette-with-flavour-of-garlic-recipe-main-photo.webp",
+      "img": recipesImage.Image5,
       "description": "Fluffy omelette stuffed with sautéed spinach, mushrooms, and cheese—light yet satisfying.",
       "recipe": [
         "Eggs: Whisked until frothy.",
@@ -122,7 +123,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 6,
       "name": "Chocolate‑Banana Pancakes",
-      "img": "https://img-global.cpcdn.com/recipes/25a2954df5e08be9/300x426cq80/chocolate-banana-pancakes-recipe-main-photo.webp",
+      "img": recipesImage.Image6,
       "description": "Soft pancakes flavored with cocoa and banana—great for indulgent brunch with a dusting of powdered sugar.",
       "recipe": [
         "Flour, cocoa powder, sugar, salt: Dry mix.",
@@ -145,7 +146,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 7,
       "name": "Smoked Salmon Bagel",
-      "img": "https://feelgoodfoodie.net/wp-content/uploads/2021/03/smoked-salmon-bagel-10.jpg",
+      "img": recipesImage.Image7,
       "description": "Toasted bagel layered with cream cheese, smoked salmon, capers, red onion, and dill—a classic elevated brunch favorite.",
       "recipe": [
         "Bagel: Toasted.",
@@ -168,7 +169,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 8,
       "name": "Cottage‑Cheese Pancakes",
-      "img": "https://img-global.cpcdn.com/recipes/b1ec7cc3f210e826/300x426cq80/syrnyky-ukrainian-cottage-cheese-pancakes-recipe-main-photo.webp",
+      "img": recipesImage.Image8,
       "description": "High‑protein pancakes made with cottage cheese, eggs, and oats—light, healthy, and delicious.",
       "recipe": [
         "Cottage cheese, oats, eggs: Blend into batter.",
@@ -190,7 +191,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 9,
       "name": "Shakshuka",
-      "img": "https://img-global.cpcdn.com/recipes/ab4b7f7e90330fe9/300x426cq80/shakshuka-recipe-main-photo.webp",
+      "img": recipesImage.Image9,
       "description": "Poached eggs in a spicy tomato‑pepper sauce—savory, satisfying, and perfect for dipping crusty bread.",
       "recipe": [
         "Onion & peppers: Sauté until soft.",
@@ -213,7 +214,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 10,
       "name": "Greek Yogurt Parfait",
-      "img": "https://img-global.cpcdn.com/recipes/661cd52ee0184586/300x426cq80/greek-yogurt-strawberry-parfait-recipe-main-photo.webp",
+      "img": recipesImage.Image10,
       "description": "Layers of Greek yogurt, granola, fresh fruit, and honey—crunchy, creamy, and easy to assemble.",
       "recipe": [
         "Greek yogurt: Base layer.",
@@ -236,7 +237,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 11,
       "name": "Huevos Rancheros",
-      "img": "https://img-global.cpcdn.com/recipes/0149dcc027d89e67/300x426cq80/huevos-rancheros-recipe-main-photo.webp",
+      "img": recipesImage.Image11,
       "description": "Crispy tortillas topped with fried eggs, spicy tomato‑chili sauce, avocado, and cheese—a bold southwestern brunch classic.",
       "recipe": [
         "Tortillas: Lightly fried or toasted.",
@@ -259,7 +260,7 @@ export const RecipesContextProvider: React.FC<RecipesContextProps> = ({ children
     {
       "id": 12,
       "name": "Cinnamon‑Apple Oatmeal",
-      "img": "https://healthyfitnessmeals.com/wp-content/uploads/2021/08/apple-cinnamon-oatmeal-11.jpg",
+      "img": recipesImage.Image12,
       "description": "Warm oatmeal cooked with cinnamon, apple pieces, and a touch of maple syrup—perfectly cozy and nutritious.",
       "recipe": [
         "Oats: Cooked in water or milk.",
