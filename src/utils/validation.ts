@@ -27,3 +27,8 @@ export const isName =
       const namePattern = /^[A-Za-z]+([ '-][A-Za-z]+)*$/;
       return namePattern.test(value) ? "" : errorMessage;
    };
+export const isPassword =
+   (errorMessage: string = "Enter a valid password") =>(value: string): string => {
+      const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      return passwordPattern.test(value) ? "" : errorMessage;
+   };
