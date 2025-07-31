@@ -2,33 +2,48 @@ import Button from "../../components/button";
 import Input from "../../components/input";
 import { Logo, ContactImage } from "../../assets/index";
 import { useState } from "react";
-import { validateForm, validateInput } from "../../utils/validator";
+import { useValidateInput } from "../../hooks/validator";
 import { signUpFormSchema } from "../../schemas/signUpFrom.schema";
+import { useLocation, useNavigate } from "react-router-dom";
 const SignUp = () => {
-   const [user, setUser] = useState({
+   const navigate = useNavigate();
+   const location =useLocation();
+   const [ user, setUser ] = useState({
       name: "",
       email: "",
       phone: "",
       city: "",
       password: "",
    });
-   const [error, setError] = useState<any>({});
+   const [ isError, setIsError ] = useState(true);
+   const [ error, setError ] = useState<any>({});
    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = e.target;
-      setUser({ ...user, [name]: value });
+      setUser({ ...user, [ name ]: value });
    };
    const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-      const errorMessage = validateInput(e, signUpFormSchema);
+      const [ errorMessage, isError ] = useValidateInput(e, signUpFormSchema);
       setError((prevError: any) => ({
          ...prevError,
-         [e.target.name]: errorMessage || "",
+         [ e.target.name ]: errorMessage || "",
       }));
+      setIsError(isError);
    };
    const handleSubmit = () => {
-      setError(validateForm(user, signUpFormSchema));
-      console.log(error, "error");
-      // localStorage.setItem("user", JSON.stringify(user));
-      alert("User Registered Successfully!");
+      if (isError) {
+         alert("Please fill the form correctly!");
+         return;
+      }
+      localStorage.setItem("user", JSON.stringify(user));
+      alert(`Thank you ${user.name} for signing up!`);
+      setUser({
+         name: "",
+         email: "",
+         phone: "",
+         city: "",
+         password: "",
+      });
+      navigate(location.state?.from || "/", { replace: true });
    };
    return (
       <>
@@ -55,7 +70,8 @@ const SignUp = () => {
                            onChange={handleChange}
                            name="name"
                            placeholder="Enter Your Name"
-                           error={error["name"]}
+                           error={error[ "name" ]}
+                           onFocus={() => setError((prev: any) => ({ ...prev, name: "" }))}
                         />
                         <Input
                            type="text"
@@ -64,7 +80,8 @@ const SignUp = () => {
                            onChange={handleChange}
                            name="email"
                            placeholder="Enter Your Email"
-                           error={error["email"]}
+                           error={error[ "email" ]}
+                           onFocus={() => setError((prev: any) => ({ ...prev, email: "" }))}
                         />
                         <Input
                            type="text"
@@ -73,7 +90,8 @@ const SignUp = () => {
                            onChange={handleChange}
                            name="phone"
                            placeholder="Enter Your Phone No."
-                           error={error["phone"]}
+                           error={error[ "phone" ]}
+                           onFocus={() => setError((prev: any) => ({ ...prev, phone: "" }))}
                         />
                         <Input
                            type="text"
@@ -82,7 +100,8 @@ const SignUp = () => {
                            onChange={handleChange}
                            name="city"
                            placeholder="Enter Your City"
-                           error={error["city"]}
+                           error={error[ "city" ]}
+                           onFocus={() => setError((prev: any) => ({ ...prev, city: "" }))}
                         />
                         <Input
                            type="password"
@@ -91,7 +110,8 @@ const SignUp = () => {
                            onChange={handleChange}
                            name="password"
                            placeholder="Enter Your Password"
-                           error={error["password"]}
+                           error={error[ "password" ]}
+                           onFocus={() => setError((prev: any) => ({ ...prev, password: "" }))}
                         />
                         <Button name="Submit" className="text-text" />
                      </form>
