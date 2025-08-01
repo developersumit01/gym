@@ -4,12 +4,16 @@ interface AuthProps {
 }
 export const AuthContext = createContext('' as any);
 const AuthContextProvider: React.FC<AuthProps> = ({ children }) => {
-   const [ auth, setAuth ] = useState<boolean>(false);
+   const [ auth, setAuth ] = useState<boolean | null>(null); // null = not checked yet
+
    useEffect(() => {
-      if (localStorage.getItem('user') !== null) {
-         setAuth(true);
-      }
-   }, [])
+      const user = localStorage.getItem('user');
+      setAuth(!!user); // true if user exists
+   }, []);
+
+   if (auth === null) {
+      return <div className="mt-18">Loading...</div>; // or a spinner
+   }
    return (
       <AuthContext.Provider value={[ auth, setAuth ]}>
          {children}

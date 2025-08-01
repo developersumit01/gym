@@ -12,7 +12,7 @@ const Login = () => {
                   <img src={Logo} alt="" className="w-24" />
                   <div className="font-semibold text-3xl text-text">Login</div>
                </div>
-               <div className="text-primary md:text-text md:text-5xl text-2xl font-semibold mb-4">Track Your Progress & More!</div>
+               <div className="text-primary md:text-text md:text-5xl text-2xl font-semibold mb-4">Welcome Back!</div>
                <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] lg:grid-cols-[1fr_500px] gap-4">
                   <div className="w-full md:max-w-2xl flex flex-col justify-center items-center md:p-4 p-1">
                      <form className="flex flex-col gap-4 w-full" action={() => { }}>

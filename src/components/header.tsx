@@ -7,6 +7,7 @@ import * as routes from "../absolute-routes";
 import useAuth from "../hooks/useAuth.hook";
 const Header = () => {
    const [ isHeaderOpen, setIsHeaderOpen ] = useState<boolean>(false);
+   const [ isProfileMenuOpen, setIsProfileMenuOpen ] = useState<boolean>(false);
    const navigate = useNavigate()
    const [ auth ] = useAuth();
    return (
@@ -25,6 +26,21 @@ const Header = () => {
                         <NavLink className="px-2" to={routes.LOGIN}>Login</NavLink>
                         <Button name="Sign up" onClick={() => { navigate(routes.SIGN_UP) }} />
                      </>
+                  }
+                  {
+                     auth && <NavLink className="px-2" to={routes.PROFILE}>
+                        <div className="relative">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8" onClick={() => { setIsProfileMenuOpen(!isProfileMenuOpen)}}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                           </svg>
+                           <div className={`absolute right-0 rounded-md mt-1 bg-overlay p-4 flex-col justify-center items-start text-md ${isProfileMenuOpen ? 'flex' : 'hidden'}`}>
+                              <div className="text-nowrap px-[2px] border-b w-full hover:text-primary hover:border-b-primary text-text">Sumit Kumar</div>
+                              <div className="text-nowrap pt-2 px-[2px] border-b w-full hover:text-primary hover:border-b-primary text-text">Profile</div>
+                              <div className="text-nowrap pt-2 px-[2px] border-b w-full hover:text-primary hover:border-b-primary text-text">logout</div>
+                           </div>
+                        </div>
+
+                     </NavLink>
                   }
                   {/* <NavLink className="px-2" to="/recipes">Recipes</NavLink>
                   <NavLink className="px-2" to="/store">Store</NavLink> */}

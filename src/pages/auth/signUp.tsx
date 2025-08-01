@@ -8,15 +8,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth.hook";
 const SignUp = () => {
    const navigate = useNavigate();
-   const location =useLocation();
+   const location = useLocation();
    const [ user, setUser ] = useState({
       name: "",
       email: "",
       phone: "",
       city: "",
       password: "",
+      login: true,
    });
-   const [_, setAuth] = useAuth();
+   const [ _, setAuth ] = useAuth();
    const [ isError, setIsError ] = useState(true);
    const [ error, setError ] = useState<any>({});
    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,6 +45,7 @@ const SignUp = () => {
          phone: "",
          city: "",
          password: "",
+         login: true,
       });
       setAuth(true);
       // Redirect to the home page or the page user was trying to access before signing up

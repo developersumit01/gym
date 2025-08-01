@@ -13,6 +13,7 @@ import SignUp from "./pages/auth/signUp";
 import AuthGuard from "./guards/auth.gaurd";
 import * as routes from "./absolute-routes";
 import Login from "./pages/auth/login";
+import Profile from "./pages/profile";
 
 const AppRoute = () => {
    return (
@@ -66,7 +67,7 @@ const AppRoute = () => {
 
          {/* Private route start here */}
          <Routes>
-            <Route path="dashboard" />
+            <Route path={routes.PROFILE} element={<AuthGuard><Profile /></AuthGuard>} />
          </Routes>
          {/* Private route end here */}
       </Layout>
