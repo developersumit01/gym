@@ -6,6 +6,7 @@ import { useValidateInput } from "../../hooks/validator";
 import { signUpFormSchema } from "../../schemas/signUpFrom.schema";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth.hook";
+import { signUp } from "../../utils/auth";
 const SignUp = () => {
    const navigate = useNavigate();
    const location = useLocation();
@@ -15,7 +16,7 @@ const SignUp = () => {
       phone: "",
       city: "",
       password: "",
-      login: true,
+      isLoggedIn: true,
    });
    const [ _, setAuth ] = useAuth();
    const [ isError, setIsError ] = useState(true);
@@ -37,7 +38,11 @@ const SignUp = () => {
          alert("Please fill the form correctly!");
          return;
       }
-      localStorage.setItem("user", JSON.stringify(user));
+      const [ success, message ] = signUp(user);
+      if (!success) {
+         alert(message);
+         return;
+      }
       alert(`Thank you ${user.name} for signing up!`);
       setUser({
          name: "",
@@ -45,7 +50,7 @@ const SignUp = () => {
          phone: "",
          city: "",
          password: "",
-         login: true,
+         isLoggedIn: true,
       });
       setAuth(true);
       // Redirect to the home page or the page user was trying to access before signing up

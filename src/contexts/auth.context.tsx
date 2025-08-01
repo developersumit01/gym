@@ -8,7 +8,12 @@ const AuthContextProvider: React.FC<AuthProps> = ({ children }) => {
 
    useEffect(() => {
       const user = localStorage.getItem('user');
-      setAuth(!!user); // true if user exists
+      if (user) {
+         const userArray = JSON.parse(user);
+         setAuth(userArray.some((u: any) => {
+            return u.isLoggedIn; // return true if any user is logged in
+         }))
+      }
    }, []);
 
    if (auth === null) {
