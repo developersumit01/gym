@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useValidateInput } from "../../hooks/validator";
 import { signUpFormSchema } from "../../schemas/signUpFrom.schema";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth.hook";
+import {useAuth} from "../../hooks/useAuth.hook";
 import { signUp } from "../../utils/auth";
 const SignUp = () => {
    const navigate = useNavigate();

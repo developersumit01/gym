@@ -60,7 +60,7 @@ const AppRoute = () => {
             />
             <Route
                path={routes.WORKOUT_PROGRAMS_DAY}
-               element={<Workout />}
+               element={<AuthGuard><Workout /></AuthGuard>}
             />
          </Routes>
          {/* Public route end here */}

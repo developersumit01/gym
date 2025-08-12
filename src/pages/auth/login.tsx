@@ -1,13 +1,13 @@
 import Button from "../../components/button";
 import Input from "../../components/input";
 import { Logo, ContactImage } from "../../assets/index.tsx";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { SIGN_UP, FORGET_PASSWORD } from "../../absolute-routes";
 import { useState } from "react";
 import { useValidateInput } from "../../hooks/validator.ts";
 import { loginSchema } from "../../schemas/login.schema.ts";
 import { login } from "../../utils/auth.ts";
-import useAuth from "../../hooks/useAuth.hook.tsx";
+import {useAuth} from "../../hooks/useAuth.hook";
 const Login = () => {
    const [ user, setUser ] = useState({
       email: "",
@@ -16,6 +16,8 @@ const Login = () => {
    const [ isError, setIsError ] = useState(true);
    const [ _, setAuth ] = useAuth();
    const [ error, setError ] = useState<any>({});
+   const navigate = useNavigate();
+   const location = useLocation();
    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = e.target;
       setUser({ ...user, [ name ]: value });
@@ -35,7 +37,7 @@ const Login = () => {
       setIsError(isError);
    };
    const handleSubmit = () => {
-      if (isError) {
+      if (isError&&!error) {
          alert("Please fill the form correctly!");
          return;
       }
@@ -50,6 +52,7 @@ const Login = () => {
          email: "",
          password: "",
       });
+      navigate(location.state?.from || "/", { replace: true });
    };
    return (
       <>

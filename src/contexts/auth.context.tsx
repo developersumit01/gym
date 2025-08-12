@@ -13,6 +13,8 @@ const AuthContextProvider: React.FC<AuthProps> = ({ children }) => {
          setAuth(userArray.some((u: any) => {
             return u.isLoggedIn; // return true if any user is logged in
          }))
+      }else{
+         setAuth(false);
       }
    }, []);
 

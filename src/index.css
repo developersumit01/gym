@@ -50,4 +50,16 @@
     position: relative;
     z-index: 10;
   }
+
+  /* this is to handle the autofill background color in input field in every browser */
+   input:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px transparent !important; /* bg-gray-800 */
+    -webkit-text-fill-color: var(--text-color) !important; /* text-gray-50 */
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input:-moz-autofill {
+    box-shadow: inset 0 0 0 1000px transparent !important;
+    color: var(--text-color) !important;
+  }
 }

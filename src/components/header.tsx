@@ -1,16 +1,23 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "../assets/index";
 import { HamburgerIcon } from "../assets/icons/index";
 import Button from "./button";
 import * as routes from "../absolute-routes";
-import useAuth from "../hooks/useAuth.hook";
+import { useAuth } from "../hooks/useAuth.hook";
 import { logout } from "../utils/auth";
+import { getUserName } from "../utils/userInfo";
 const Header = () => {
+   const [ userName, setUserName ] = useState<string>();
    const [ isHeaderOpen, setIsHeaderOpen ] = useState<boolean>(false);
    const [ isProfileMenuOpen, setIsProfileMenuOpen ] = useState<boolean>(false);
    const navigate = useNavigate()
    const [ auth, setAuth ] = useAuth();
+   useEffect(() => {
+      if (auth) {
+         setUserName(getUserName());
+      }
+   }, [ auth ])
    return (
       <>
          <header className="flex fixed z-40 top-0 left-0 w-full justify-between items-center p-2 bg-header-background text-text md:px-4">
@@ -36,7 +43,7 @@ const Header = () => {
                            </svg>
                            <div className={`absolute right-0 rounded-md mt-1 bg-overlay p-4 flex flex-col justify-center items-start text-md overflow-hidden transition-[opacity,transform] duration-300 ease-in-out 
                            ${isProfileMenuOpen ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 -translate-y-4 invisible pointer-events-none'}`}>
-                              <div onClick={() => { setIsProfileMenuOpen(!isProfileMenuOpen) }} className="text-nowrap px-[2px] border-b w-full text-text">Sumit Kumar</div>
+                              <div onClick={() => { setIsProfileMenuOpen(!isProfileMenuOpen) }} className="text-nowrap px-[2px] border-b w-full text-text">{userName}</div>
                               <NavLink to={routes.PROFILE} onClick={() => { setIsProfileMenuOpen(!isProfileMenuOpen) }} className="text-nowrap pt-2 px-[2px] border-b w-full hover:text-primary hover:border-b-primary text-text">Profile</NavLink>
                               <div onClick={() => { setIsProfileMenuOpen(!isProfileMenuOpen); logout(); setAuth(false) }} className="text-nowrap pt-2 px-[2px] border-b w-full hover:text-primary hover:border-b-primary text-text">logout</div>
                            </div>
