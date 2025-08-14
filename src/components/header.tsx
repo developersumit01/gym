@@ -68,13 +68,21 @@ const Header = () => {
             ? 'opacity-100 translate-y-0 w-1/2'
             : 'w-0 opacity-0 -translate-y-2'
             }`}>
-            <NavLink to={routes.HOME} className="w-full py-1 px-2 focus-bg-fill">Home</NavLink>
-            <NavLink to={routes.ABOUT} className="w-full py-1 px-2 focus-bg-fill">About</NavLink>
-            <NavLink to={routes.WORKOUT_PROGRAMS} className="w-full py-1 px-2 focus-bg-fill">Workout Programs</NavLink>
+            <NavLink to={routes.HOME} onClick={() => { setIsHeaderOpen(!isHeaderOpen) }} className="w-full py-1 px-2 focus-bg-fill">Home</NavLink>
+            <NavLink to={routes.ABOUT} onClick={() => { setIsHeaderOpen(!isHeaderOpen) }} className="w-full py-1 px-2 focus-bg-fill">About</NavLink>
+            <NavLink to={routes.WORKOUT_PROGRAMS} onClick={() => { setIsHeaderOpen(!isHeaderOpen) }} className="w-full py-1 px-2 focus-bg-fill">Workout Programs</NavLink>
             {
-               !auth && <>
-                  <NavLink className="w-full py-1 px-2 focus-bg-fill" to={routes.LOGIN}>Login</NavLink>
-                  <Button name="Sign up" onClick={() => { navigate(routes.SIGN_UP) }} />
+               !auth ? <>
+                  <NavLink className="w-full py-1 px-2 focus-bg-fill" onClick={() => { setIsHeaderOpen(!isHeaderOpen) }} to={routes.LOGIN}>Login</NavLink>
+                  <Button name="Sign up" onClick={() => { setIsHeaderOpen(!isHeaderOpen); navigate(routes.SIGN_UP); }} />
+               </> : <>
+                  <div className="w-full flex item-center gap-1 text-center">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8" onClick={() => { setIsProfileMenuOpen(!isProfileMenuOpen) }}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                     </svg> <span className="flex items-center">{userName}</span>
+                  </div>
+                  <div onClick={() => { setIsProfileMenuOpen(!isProfileMenuOpen); logout(); setAuth(false);setIsHeaderOpen(!isHeaderOpen);  }} className="w-full py-1 px-2 focus-bg-fill">logout</div>
+
                </>
             }
             {/* <NavLink to="/recipes" className="w-full py-1 px-2 focus-bg-fill">Recipes</NavLink>

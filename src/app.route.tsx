@@ -43,11 +43,9 @@ const AppRoute = () => {
             <Route
                path={routes.ABOUT}
                element={
-                  <AuthGuard>
                      <AboutCardContextProvider>
                         <About />
                      </AboutCardContextProvider>
-                  </AuthGuard>
                }
             />
             <Route
