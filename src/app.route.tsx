@@ -13,6 +13,7 @@ import SignUp from "./pages/auth/signUp";
 import AuthGuard from "./guards/auth.gaurd";
 import * as routes from "./absolute-routes";
 import Login from "./pages/auth/login";
+import Profile from "./pages/profile";
 
 const AppRoute = () => {
    return (
@@ -42,11 +43,9 @@ const AppRoute = () => {
             <Route
                path={routes.ABOUT}
                element={
-                  <AuthGuard>
                      <AboutCardContextProvider>
                         <About />
                      </AboutCardContextProvider>
-                  </AuthGuard>
                }
             />
             <Route
@@ -59,14 +58,14 @@ const AppRoute = () => {
             />
             <Route
                path={routes.WORKOUT_PROGRAMS_DAY}
-               element={<Workout />}
+               element={<AuthGuard><Workout /></AuthGuard>}
             />
          </Routes>
          {/* Public route end here */}
 
          {/* Private route start here */}
          <Routes>
-            <Route path="dashboard" />
+            <Route path={routes.PROFILE} element={<AuthGuard><Profile /></AuthGuard>} />
          </Routes>
          {/* Private route end here */}
       </Layout>

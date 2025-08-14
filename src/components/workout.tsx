@@ -3,13 +3,13 @@ import { filterWorkoutData } from "../contexts/workout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import {DAY, WORKOUT_PROGRAMS} from "../routes"
+import {Image12} from "../assets/images/workoutPrograms.images"
 
 const Workout = () => {
    const { workoutName, day } = useParams();
    const [ workoutData ] = filterWorkoutData(workoutName);
    const location = useLocation();
-   const {image}=location.state||{}
-
+   const {image}=location.state||{image:Image12};
    return (
       <>
          <section className="max-w-layout mx-auto mt-16 text-text pt-12">
